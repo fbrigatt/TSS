@@ -39,6 +39,11 @@ namespace GuaraTattooSoft.User_Controls
         private void Carregar(int id_cliente)
         {
             Clientes cliente = new Clientes(id_cliente);
+            if(string.IsNullOrEmpty(cliente.Nome))
+            {
+                MessageBox.Show("Cliente não localizado!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
             /*** CLIENTE ***/
             DataSet ds = new DsFichaCompletaCliente();
