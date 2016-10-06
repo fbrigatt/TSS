@@ -1,0 +1,886 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9BD5D79A-1A86-4DF4-B295-93E7113E3B04}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GuaraTattooSoft</RootNamespace>
+    <AssemblyName>Tattoo Smart Soft</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Users\Marcos Vinicius\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iconeFinall.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>GuaraTattooSoft.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>8DBD5B0AEAC949206EB43876D3E9115F7CAA0D6B</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>GuaraTattooSoft_ChaveTemporária.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Correios.Net">
+      <HintPath>.\Correios.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=10.0.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SigGestao\Projetos\Estoque\Estoque\bin\Debug\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\Connector.NET 6.9\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assistente\Apresentacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assistente\Apresentacao.Designer.cs">
+      <DependentUpon>Apresentacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assistente\CadastroAnamneses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assistente\CadastroAnamneses.Designer.cs">
+      <DependentUpon>CadastroAnamneses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assistente\CadastroCaixas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assistente\CadastroCaixas.Designer.cs">
+      <DependentUpon>CadastroCaixas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assistente\CadastroLoja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assistente\CadastroLoja.Designer.cs">
+      <DependentUpon>CadastroLoja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assistente\CadastroProfissionais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assistente\CadastroProfissionais.Designer.cs">
+      <DependentUpon>CadastroProfissionais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assistente\CadastroTipoServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assistente\CadastroTipoServico.Designer.cs">
+      <DependentUpon>CadastroTipoServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assistente\CadastroUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assistente\CadastroUsuarios.Designer.cs">
+      <DependentUpon>CadastroUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assistente\Config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assistente\Config.Designer.cs">
+      <DependentUpon>Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes especiais\AgendaOpcoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Componentes especiais\AgendaOpcoes.Designer.cs">
+      <DependentUpon>AgendaOpcoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes especiais\Autenticacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Componentes especiais\Autenticacao.Designer.cs">
+      <DependentUpon>Autenticacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes especiais\CardCompromisso.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componentes especiais\CardCompromisso.Designer.cs">
+      <DependentUpon>CardCompromisso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes especiais\CardProfissional.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componentes especiais\CardProfissional.Designer.cs">
+      <DependentUpon>CardProfissional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes especiais\Confirmacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Componentes especiais\Confirmacao.Designer.cs">
+      <DependentUpon>Confirmacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBConnection\Conexao.cs" />
+    <Compile Include="Entidades\Agenda.cs" />
+    <Compile Include="Entidades\Anamneses.cs" />
+    <Compile Include="Entidades\Caixas.cs" />
+    <Compile Include="Entidades\Clientes.cs" />
+    <Compile Include="Entidades\Clientes_anamneses.cs" />
+    <Compile Include="Entidades\Config.cs" />
+    <Compile Include="Entidades\Contas_pagar.cs" />
+    <Compile Include="Entidades\Contas_receber.cs" />
+    <Compile Include="Entidades\Formas_pagamento.cs" />
+    <Compile Include="Entidades\IClasse_Persistencia.cs" />
+    <Compile Include="Entidades\Itens_movimento.cs" />
+    <Compile Include="Entidades\Loja.cs" />
+    <Compile Include="Entidades\Materiais.cs" />
+    <Compile Include="Entidades\Movimentos.cs" />
+    <Compile Include="Entidades\Movimentos_itens_movimento.cs" />
+    <Compile Include="Entidades\Operadoras_cartao.cs" />
+    <Compile Include="Entidades\Pagamentos_movimentos.cs" />
+    <Compile Include="Entidades\Profissionais.cs" />
+    <Compile Include="Entidades\Servicos.cs" />
+    <Compile Include="Entidades\Servicos_materiais.cs" />
+    <Compile Include="Entidades\Status_caixa.cs" />
+    <Compile Include="Entidades\Tipos_movimento.cs" />
+    <Compile Include="Entidades\Tipos_servico.cs" />
+    <Compile Include="Entidades\Totais_caixa.cs" />
+    <Compile Include="Entidades\Usuarios.cs" />
+    <Compile Include="Entidades\Usuarios_tipos_movimentos.cs" />
+    <Compile Include="Extencoes\AgendaBackController.cs" />
+    <Compile Include="Extencoes\Padroes.cs" />
+    <Compile Include="Forms\AdicionarItensMov.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdicionarItensMov.Designer.cs">
+      <DependentUpon>AdicionarItensMov.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AlterarQuant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AlterarQuant.Designer.cs">
+      <DependentUpon>AlterarQuant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CriaModeloEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CriaModeloEmail.Designer.cs">
+      <DependentUpon>CriaModeloEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CriarAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CriarAgendamento.Designer.cs">
+      <DependentUpon>CriarAgendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DetalhesMovimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DetalhesMovimento.Designer.cs">
+      <DependentUpon>DetalhesMovimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InputUsuarioSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InputUsuarioSenha.Designer.cs">
+      <DependentUpon>InputUsuarioSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PagConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PagConta.Designer.cs">
+      <DependentUpon>PagConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parcelamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parcelamento.Designer.cs">
+      <DependentUpon>Parcelamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reagendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reagendar.Designer.cs">
+      <DependentUpon>Reagendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RelatorioClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RelatorioClientes.Designer.cs">
+      <DependentUpon>RelatorioClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelecionarCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelecionarCaixa.Designer.cs">
+      <DependentUpon>SelecionarCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelecionarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelecionarCliente.Designer.cs">
+      <DependentUpon>SelecionarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelecionarFormaPag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelecionarFormaPag.Designer.cs">
+      <DependentUpon>SelecionarFormaPag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelecionarProfissional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelecionarProfissional.Designer.cs">
+      <DependentUpon>SelecionarProfissional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelecionarTipoMov.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelecionarTipoMov.Designer.cs">
+      <DependentUpon>SelecionarTipoMov.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelecionarTipoServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelecionarTipoServico.Designer.cs">
+      <DependentUpon>SelecionarTipoServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelecionarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelecionarUsuario.Designer.cs">
+      <DependentUpon>SelecionarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UsarComo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UsarComo.Designer.cs">
+      <DependentUpon>UsarComo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\ComprovanteServico.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComprovanteServico.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\DataSets\DsClientes_listagem.cs">
+      <DependentUpon>DsClientes_listagem.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\DataSets\DsClientes_listagem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsClientes_listagem.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\DataSets\DsComprovanteServico.cs">
+      <DependentUpon>DsComprovanteServico.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\DataSets\DsComprovanteServico.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsComprovanteServico.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\DataSets\DsFichaCompletaCliente.cs">
+      <DependentUpon>DsFichaCompletaCliente.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\DataSets\DsFichaCompletaCliente.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsFichaCompletaCliente.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\ExibeRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\ExibeRelatorio.Designer.cs">
+      <DependentUpon>ExibeRelatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\VisualizaRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\VisualizaRelatorios.Designer.cs">
+      <DependentUpon>VisualizaRelatorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Threads\EnvioEmail.cs" />
+    <Compile Include="Threads\MonitoraAniversario.cs" />
+    <Compile Include="Threads\MonitoraAniversarios.cs" />
+    <Compile Include="Threads\MonitoraCaixa.cs" />
+    <Compile Include="User Controls\AberturaFechamentoCaixa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\AberturaFechamentoCaixa.Designer.cs">
+      <DependentUpon>AberturaFechamentoCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\Agendamento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\Agendamento.Designer.cs">
+      <DependentUpon>Agendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\AjustesGerais.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\AjustesGerais.Designer.cs">
+      <DependentUpon>AjustesGerais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\AlterarComissao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\AlterarComissao.Designer.cs">
+      <DependentUpon>AlterarComissao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\CadastroEmpresa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\CadastroEmpresa.Designer.cs">
+      <DependentUpon>CadastroEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ConsultaMovimentos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ConsultaMovimentos.Designer.cs">
+      <DependentUpon>ConsultaMovimentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ConsultaValorCaixa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ConsultaValorCaixa.Designer.cs">
+      <DependentUpon>ConsultaValorCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\FichaCompletaCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\FichaCompletaCliente.Designer.cs">
+      <DependentUpon>FichaCompletaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\HistoricoProfissional.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\HistoricoProfissional.Designer.cs">
+      <DependentUpon>HistoricoProfissional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\HistoricoServicos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\HistoricoServicos.Designer.cs">
+      <DependentUpon>HistoricoServicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ModelosEmail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ModelosEmail.Designer.cs">
+      <DependentUpon>ModelosEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\PaginaInicial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\PaginaInicial.Designer.cs">
+      <DependentUpon>PaginaInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\RClientes_ListagemSimples.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\RClientes_ListagemSimples.Designer.cs">
+      <DependentUpon>RClientes_ListagemSimples.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\RetiradaCaixa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\RetiradaCaixa.Designer.cs">
+      <DependentUpon>RetiradaCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\Trabalho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\Trabalho.Designer.cs">
+      <DependentUpon>Trabalho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\KeyValueTriple.cs" />
+    <Compile Include="Util\Temp.cs" />
+    <Compile Include="User Controls\CadastroAnamneses.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\CadastroAnamneses.Designer.cs">
+      <DependentUpon>CadastroAnamneses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\CadastroCaixa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\CadastroCaixa.Designer.cs">
+      <DependentUpon>CadastroCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\CadastroClientes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\CadastroClientes.Designer.cs">
+      <DependentUpon>CadastroClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\CadastroFormasPag.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\CadastroFormasPag.Designer.cs">
+      <DependentUpon>CadastroFormasPag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\CadastroMateriais.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\CadastroMateriais.Designer.cs">
+      <DependentUpon>CadastroMateriais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\CadastroOperadorasCartao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\CadastroOperadorasCartao.Designer.cs">
+      <DependentUpon>CadastroOperadorasCartao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\CadastroProfissionais.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\CadastroProfissionais.Designer.cs">
+      <DependentUpon>CadastroProfissionais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\CadastroTiposMov.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\CadastroTiposMov.Designer.cs">
+      <DependentUpon>CadastroTiposMov.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\CadastroTiposServico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\CadastroTiposServico.Designer.cs">
+      <DependentUpon>CadastroTiposServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\CadastroUsuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\CadastroUsuarios.Designer.cs">
+      <DependentUpon>CadastroUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ContasAPagar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ContasAPagar.Designer.cs">
+      <DependentUpon>ContasAPagar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ContasAReceber.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ContasAReceber.Designer.cs">
+      <DependentUpon>ContasAReceber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\LancamentoMovimentos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\LancamentoMovimentos.Designer.cs">
+      <DependentUpon>LancamentoMovimentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ToggleButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ToggleButton.Designer.cs">
+      <DependentUpon>ToggleButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\AbrePagina.cs" />
+    <Compile Include="Util\Atencao.cs" />
+    <Compile Include="Util\Erro.cs" />
+    <Compile Include="Util\Sucesso.cs" />
+    <EmbeddedResource Include="Assistente\Apresentacao.resx">
+      <DependentUpon>Apresentacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assistente\CadastroAnamneses.resx">
+      <DependentUpon>CadastroAnamneses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assistente\CadastroCaixas.resx">
+      <DependentUpon>CadastroCaixas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assistente\CadastroLoja.resx">
+      <DependentUpon>CadastroLoja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assistente\CadastroProfissionais.resx">
+      <DependentUpon>CadastroProfissionais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assistente\CadastroTipoServico.resx">
+      <DependentUpon>CadastroTipoServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assistente\CadastroUsuarios.resx">
+      <DependentUpon>CadastroUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assistente\Config.resx">
+      <DependentUpon>Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componentes especiais\AgendaOpcoes.resx">
+      <DependentUpon>AgendaOpcoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componentes especiais\Autenticacao.resx">
+      <DependentUpon>Autenticacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componentes especiais\CardCompromisso.resx">
+      <DependentUpon>CardCompromisso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componentes especiais\CardProfissional.resx">
+      <DependentUpon>CardProfissional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componentes especiais\Confirmacao.resx">
+      <DependentUpon>Confirmacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdicionarItensMov.resx">
+      <DependentUpon>AdicionarItensMov.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AlterarQuant.resx">
+      <DependentUpon>AlterarQuant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CriaModeloEmail.resx">
+      <DependentUpon>CriaModeloEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CriarAgendamento.resx">
+      <DependentUpon>CriarAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DetalhesMovimento.resx">
+      <DependentUpon>DetalhesMovimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InputUsuarioSenha.resx">
+      <DependentUpon>InputUsuarioSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PagConta.resx">
+      <DependentUpon>PagConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parcelamento.resx">
+      <DependentUpon>Parcelamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reagendar.resx">
+      <DependentUpon>Reagendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RelatorioClientes.resx">
+      <DependentUpon>RelatorioClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelecionarCaixa.resx">
+      <DependentUpon>SelecionarCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelecionarCliente.resx">
+      <DependentUpon>SelecionarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelecionarFormaPag.resx">
+      <DependentUpon>SelecionarFormaPag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelecionarProfissional.resx">
+      <DependentUpon>SelecionarProfissional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelecionarTipoMov.resx">
+      <DependentUpon>SelecionarTipoMov.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelecionarTipoServico.resx">
+      <DependentUpon>SelecionarTipoServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelecionarUsuario.resx">
+      <DependentUpon>SelecionarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UsarComo.resx">
+      <DependentUpon>UsarComo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\ComprovanteServico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ComprovanteServico.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\ExibeRelatorio.resx">
+      <DependentUpon>ExibeRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\reports\FichaCompletaCliente.rdlc" />
+    <EmbeddedResource Include="Relatorios\reports\ListagemClientes.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\VisualizaRelatorios.resx">
+      <DependentUpon>VisualizaRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\AberturaFechamentoCaixa.resx">
+      <DependentUpon>AberturaFechamentoCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\Agendamento.resx">
+      <DependentUpon>Agendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\AjustesGerais.resx">
+      <DependentUpon>AjustesGerais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\AlterarComissao.resx">
+      <DependentUpon>AlterarComissao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\CadastroAnamneses.resx">
+      <DependentUpon>CadastroAnamneses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\CadastroCaixa.resx">
+      <DependentUpon>CadastroCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\CadastroClientes.resx">
+      <DependentUpon>CadastroClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\CadastroEmpresa.resx">
+      <DependentUpon>CadastroEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\CadastroFormasPag.resx">
+      <DependentUpon>CadastroFormasPag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\CadastroMateriais.resx">
+      <DependentUpon>CadastroMateriais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\CadastroOperadorasCartao.resx">
+      <DependentUpon>CadastroOperadorasCartao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\CadastroProfissionais.resx">
+      <DependentUpon>CadastroProfissionais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\CadastroTiposMov.resx">
+      <DependentUpon>CadastroTiposMov.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\CadastroTiposServico.resx">
+      <DependentUpon>CadastroTiposServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\CadastroUsuarios.resx">
+      <DependentUpon>CadastroUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ConsultaMovimentos.resx">
+      <DependentUpon>ConsultaMovimentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ConsultaValorCaixa.resx">
+      <DependentUpon>ConsultaValorCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ContasAPagar.resx">
+      <DependentUpon>ContasAPagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ContasAReceber.resx">
+      <DependentUpon>ContasAReceber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\FichaCompletaCliente.resx">
+      <DependentUpon>FichaCompletaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\HistoricoProfissional.resx">
+      <DependentUpon>HistoricoProfissional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\HistoricoServicos.resx">
+      <DependentUpon>HistoricoServicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\LancamentoMovimentos.resx">
+      <DependentUpon>LancamentoMovimentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ModelosEmail.resx">
+      <DependentUpon>ModelosEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\PaginaInicial.resx">
+      <DependentUpon>PaginaInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\RClientes_ListagemSimples.resx">
+      <DependentUpon>RClientes_ListagemSimples.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\RetiradaCaixa.resx">
+      <DependentUpon>RetiradaCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ToggleButton.resx">
+      <DependentUpon>ToggleButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\Trabalho.resx">
+      <DependentUpon>Trabalho.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="iconeFinall.ico" />
+    <Content Include="Icones\1460090808_gnome-keyring-manager.png" />
+    <Content Include="Icones\procurar.png" />
+    <None Include="Relatorios\DataSets\DsClientes_listagem.xsc">
+      <DependentUpon>DsClientes_listagem.xsd</DependentUpon>
+    </None>
+    <None Include="Relatorios\DataSets\DsClientes_listagem.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsClientes_listagem.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Relatorios\DataSets\DsClientes_listagem.xss">
+      <DependentUpon>DsClientes_listagem.xsd</DependentUpon>
+    </None>
+    <None Include="Relatorios\DataSets\DsComprovanteServico.xsc">
+      <DependentUpon>DsComprovanteServico.xsd</DependentUpon>
+    </None>
+    <None Include="Relatorios\DataSets\DsComprovanteServico.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsComprovanteServico.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Relatorios\DataSets\DsComprovanteServico.xss">
+      <DependentUpon>DsComprovanteServico.xsd</DependentUpon>
+    </None>
+    <None Include="Relatorios\DataSets\DsFichaCompletaCliente.xsc">
+      <DependentUpon>DsFichaCompletaCliente.xsd</DependentUpon>
+    </None>
+    <None Include="Relatorios\DataSets\DsFichaCompletaCliente.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsFichaCompletaCliente.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Relatorios\DataSets\DsFichaCompletaCliente.xss">
+      <DependentUpon>DsFichaCompletaCliente.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\1459010232_Help.png" />
+    <None Include="Resources\arrows.png" />
+    <Content Include="Resources\iconeFinal.png" />
+    <None Include="Resources\button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Relatorios\UserControls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

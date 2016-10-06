@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<config> 
+    <URL> localhost </URL> 
+	  <DATABASE> tattoo </DATABASE> 
+	  <UID> root </UID> 
+	  <Passwd> 81547686 </Passwd> 
+</config> 
