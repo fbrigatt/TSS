@@ -70,7 +70,7 @@ namespace GuaraTattooSoft.User_Controls
             
             if(modoEdicao == true)
             {
-                int id = dataGridUsuarios.IdAtual(0);
+                 int id = dataGridUsuarios.IdAtual(0);
                 utm = new Usuarios_tipos_movimentos(id);
 
                 for (int i = 0; i < utm.usuarios_id_todos.Count; i++)
