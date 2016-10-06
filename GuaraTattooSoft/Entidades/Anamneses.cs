@@ -152,6 +152,40 @@ namespace GuaraTattooSoft.Entidades
             throw new NotImplementedException();
         }
 
+        public void LoadByCliente(int id_cliente)
+        {
+            try
+            {
+                string sql = @"select anamneses.id, anamneses.descricao from anamneses
+                                inner join clientes_anamneses on clientes_anamneses.anamneses_id = anamneses.id
+                                where clientes_anamneses.clientes_id = " + id_cliente;
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn.GetConexao());
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        id_todos.Add(dr.GetInt32(0));
+                        string descricao = dr.IsDBNull(1) ? descricao = string.Empty : descricao = dr.GetString(1);
+                        descricao_todos.Add(descricao);
+                    }
+                }
+
+                dr.Close();
+
+            }
+            catch (MySqlException ex)
+            {
+                Erro.Show(ex.Message, defaultError);
+            }
+            finally
+            {
+                conn.Fechar();
+            }
+        }
+
         public int IdByFieldName(string searchTerm)
         {
             try

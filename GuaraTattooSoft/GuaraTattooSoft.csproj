@@ -453,11 +453,11 @@
     <Compile Include="User Controls\ConsultaValorCaixa.Designer.cs">
       <DependentUpon>ConsultaValorCaixa.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\FichaCompletaCliente.cs">
+    <Compile Include="User Controls\RClientes_FichaCompleta.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\FichaCompletaCliente.Designer.cs">
-      <DependentUpon>FichaCompletaCliente.cs</DependentUpon>
+    <Compile Include="User Controls\RClientes_FichaCompleta.Designer.cs">
+      <DependentUpon>RClientes_FichaCompleta.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\HistoricoProfissional.cs">
       <SubType>UserControl</SubType>
@@ -702,7 +702,9 @@
     <EmbeddedResource Include="Relatorios\ExibeRelatorio.resx">
       <DependentUpon>ExibeRelatorio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Relatorios\reports\FichaCompletaCliente.rdlc" />
+    <EmbeddedResource Include="Relatorios\reports\FichaCompletaCliente.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\reports\ListagemClientes.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -766,8 +768,8 @@
     <EmbeddedResource Include="User Controls\ContasAReceber.resx">
       <DependentUpon>ContasAReceber.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\FichaCompletaCliente.resx">
-      <DependentUpon>FichaCompletaCliente.cs</DependentUpon>
+    <EmbeddedResource Include="User Controls\RClientes_FichaCompleta.resx">
+      <DependentUpon>RClientes_FichaCompleta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\HistoricoProfissional.resx">
       <DependentUpon>HistoricoProfissional.cs</DependentUpon>

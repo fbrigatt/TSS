@@ -1,6 +1,6 @@
 ﻿namespace GuaraTattooSoft.User_Controls
 {
-    partial class FichaCompletaCliente
+    partial class RClientes_FichaCompleta
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -84,14 +84,15 @@
             this.btVisualizar.BackColor = System.Drawing.Color.Teal;
             this.btVisualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btVisualizar.ForeColor = System.Drawing.Color.White;
-            this.btVisualizar.Location = new System.Drawing.Point(236, 260);
+            this.btVisualizar.Location = new System.Drawing.Point(224, 255);
             this.btVisualizar.Name = "btVisualizar";
-            this.btVisualizar.Size = new System.Drawing.Size(75, 23);
+            this.btVisualizar.Size = new System.Drawing.Size(87, 28);
             this.btVisualizar.TabIndex = 14;
             this.btVisualizar.Text = "&Visualizar";
             this.btVisualizar.UseVisualStyleBackColor = false;
+            this.btVisualizar.Click += new System.EventHandler(this.btVisualizar_Click);
             // 
-            // FichaCompletaCliente
+            // RClientes_FichaCompleta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -101,7 +102,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txCod_Cliente);
             this.Controls.Add(this.label1);
-            this.Name = "FichaCompletaCliente";
+            this.Name = "RClientes_FichaCompleta";
             this.Size = new System.Drawing.Size(326, 303);
             ((System.ComponentModel.ISupportInitialize)(this.txCod_Cliente)).EndInit();
             this.ResumeLayout(false);

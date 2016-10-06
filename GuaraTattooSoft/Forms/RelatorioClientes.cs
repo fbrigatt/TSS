@@ -42,7 +42,7 @@ namespace GuaraTattooSoft.Forms
 
                 case (int)Modelo.FichaCompleta:
 
-                    painelVis.Controls.Add(new FichaCompletaCliente());
+                    painelVis.Controls.Add(new RClientes_FichaCompleta());
                     break;
             }
         }

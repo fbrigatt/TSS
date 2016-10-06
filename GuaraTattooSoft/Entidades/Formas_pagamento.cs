@@ -185,6 +185,40 @@ namespace GuaraTattooSoft.Entidades
             throw new NotImplementedException();
         }
 
+        public Formas_pagamento GetByServico(int servico_id)
+        {
+            try
+            {
+                string sql = @"select pagamentos_movimentos.formas_pagamento_id from movimentos 
+                                inner join pagamentos_movimentos on movimentos.pagamentos_movimentos_id = pagamentos_movimentos.id
+                                inner join movimentos_itens_movimento on movimentos.id = movimentos_itens_movimento.movimentos_id
+                                inner join itens_movimento on movimentos_itens_movimento.itens_movimento_id = itens_movimento.id
+                                where itens_movimento.servico_material = 0 AND itens_movimento.cod_servico_material = " + servico_id;
+                MySqlCommand cmd = new MySqlCommand(sql, conn.GetConexao());
+                MySqlDataReader dr = cmd.ExecuteReader();
+                dr.Read();
+                if (dr.HasRows)
+                {
+                    int fpg_id = dr.GetInt32(0);
+                    Formas_pagamento fpg = new Formas_pagamento(fpg_id);
+                    dr.Close();
+                    return fpg;
+                }
+
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                Erro.Show("Erro ao recuperar id para formas_pagamento \n" + ex.Message, defaultError);
+            }
+            finally
+            {
+                conn.Fechar();
+            }
+
+            return new Formas_pagamento();
+        }
+
         public void Pesquisar(string pesquisa)
         {
             try

@@ -81,9 +81,9 @@
             this.btVisualizar.BackColor = System.Drawing.Color.Teal;
             this.btVisualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btVisualizar.ForeColor = System.Drawing.Color.White;
-            this.btVisualizar.Location = new System.Drawing.Point(238, 262);
+            this.btVisualizar.Location = new System.Drawing.Point(217, 262);
             this.btVisualizar.Name = "btVisualizar";
-            this.btVisualizar.Size = new System.Drawing.Size(75, 23);
+            this.btVisualizar.Size = new System.Drawing.Size(96, 27);
             this.btVisualizar.TabIndex = 3;
             this.btVisualizar.Text = "&Visualizar";
             this.btVisualizar.UseVisualStyleBackColor = false;

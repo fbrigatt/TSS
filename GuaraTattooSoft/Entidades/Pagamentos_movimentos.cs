@@ -85,7 +85,8 @@ namespace GuaraTattooSoft.Entidades
 
                 dr.Close();
 
-            }catch(MySqlException ex)
+            }
+            catch (MySqlException ex)
             {
                 Erro.Show(ex.Message, defaultError);
             }
@@ -112,7 +113,8 @@ namespace GuaraTattooSoft.Entidades
 
                 dr.Close();
 
-            }catch(MySqlException ex)
+            }
+            catch (MySqlException ex)
             {
                 Erro.Show(ex.Message, defaultError);
             }
@@ -135,7 +137,8 @@ namespace GuaraTattooSoft.Entidades
                 MySqlCommand cmd = new MySqlCommand("delete from pagamentos_movimentos where id = " + id, conn.GetConexao());
                 cmd.ExecuteNonQuery();
 
-            }catch(MySqlException ex)
+            }
+            catch (MySqlException ex)
             {
                 Erro.Show(ex.Message, defaultError);
             }
@@ -157,7 +160,8 @@ namespace GuaraTattooSoft.Entidades
 
                 cmd.ExecuteNonQuery();
 
-            }catch(MySqlException ex)
+            }
+            catch (MySqlException ex)
             {
                 Erro.Show("Erro ao gravar pagamentos_movimentos \n" + ex.Message, defaultError);
             }
@@ -182,7 +186,8 @@ namespace GuaraTattooSoft.Entidades
 
                 dr.Close();
 
-            }catch(MySqlException ex)
+            }
+            catch (MySqlException ex)
             {
                 Erro.Show("Erro ao recuperar id para pagamentos_movimentos \n" + ex.Message, defaultError);
             }
