@@ -86,10 +86,10 @@ namespace GuaraTattooSoft.User_Controls
             cliente.Telefone = txTelefone.Text;
             cliente.Celular = txCelular.Text;
             cliente.Email = txEmail.Text;
-            cliente.Cpf = txCPF.Text;
-            cliente.Rg = txRG.Text;
+            cliente.Cpf = txCPF.Text.Replace(",", ".");
+            cliente.Rg = txRG.Text.Replace(",", ".");
             cliente.DataNasc = txDataNasc.Text;
-            cliente.Cep = txCEP.Text;
+            cliente.Cep = txCEP.Text.Replace(",", ".");
             cliente.Cidade = txCidade.Text;
             cliente.Bairro = txBairro.Text;
             cliente.Logradouro = txLogradouro.Text;
@@ -334,6 +334,7 @@ namespace GuaraTattooSoft.User_Controls
             txReferencia.Text = c.Referencia;
             txObs.Text = c.Obs;
             cbCampanha.SelectedValue = c.Campanha_id;
+            this.Update();
 
             Clientes_anamneses ca = new Clientes_anamneses(id);
 
