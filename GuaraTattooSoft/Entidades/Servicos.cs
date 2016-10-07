@@ -9,7 +9,7 @@ using GuaraTattooSoft.DBConnection;
 
 namespace GuaraTattooSoft.Entidades
 {
-    class Servicos : IClasse_Persistencia
+    public class Servicos : IClasse_Persistencia
     {
         Conexao conn = new Conexao();
         string defaultError = "Erro em servicos";

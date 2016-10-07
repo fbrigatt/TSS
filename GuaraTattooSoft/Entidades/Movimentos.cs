@@ -243,7 +243,7 @@ namespace GuaraTattooSoft.Entidades
 
                 cmd.ExecuteNonQuery();
 
-              //  Sucesso.Show("Movimento atualizado!");
+                //  Sucesso.Show("Movimento atualizado!");
 
             }
             catch (MySqlException ex)
@@ -263,7 +263,7 @@ namespace GuaraTattooSoft.Entidades
                 MySqlCommand cmd = new MySqlCommand("delete from movimentos where id = " + id, conn.GetConexao());
                 cmd.ExecuteNonQuery();
 
-              //  Sucesso.Show("Movimento excluido!");
+                //  Sucesso.Show("Movimento excluido!");
 
             }
             catch (MySqlException ex)
@@ -395,6 +395,143 @@ namespace GuaraTattooSoft.Entidades
             }
         }
 
+        public void CarregarPorCaixa(int caixa_id, string dataAbertura, string dataFechamento)
+        {
+            string sql = "select * from movimentos where caixas_id = " + caixa_id + " and data_movimento BETWEEN '" + dataAbertura + "' and '" + dataFechamento + "'";
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, conn.GetConexao());
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        id_todos.Add(dr.GetInt32(0));
+                        data_movimento_todos.Add(dr.GetDateTime(1));
+                        string obs = dr.IsDBNull(2) ? obs = string.Empty : obs = dr.GetString(2);
+                        obs_todos.Add(obs);
+                        tipos_movimento_id_todos.Add(dr.GetInt32(3));
+                        caixas_id_todos.Add(dr.GetInt32(4));
+                        usuarios_id_todos.Add(dr.GetInt32(5));
+                        clientes_id_todos.Add(dr.GetInt32(6));
+                        pagamentos_movimentos_id_todos.Add(dr.GetInt32(7));
+                    }
+                }
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                Erro.Show(ex.Message, defaultError);
+            }
+            finally
+            {
+                conn.Fechar();
+            }
+        }
+
+        public Profissionais GetProfissional(int caixas_id, string dataAbertura, string dataFechamento)
+        {
+            string sql = @"select servicos.profissionais_id from movimentos
+                            inner join movimentos_itens_movimento on movimentos.id = movimentos_itens_movimento.movimentos_id
+                            inner join itens_movimento on movimentos_itens_movimento.itens_movimento_id = itens_movimento.id
+                            inner join servicos on servicos.id = itens_movimento.cod_servico_material
+                            where itens_movimento.servico_material = 0 and movimentos.caixas_id = " + caixas_id + " and movimentos.data_movimento BETWEEN '" + dataAbertura + "' and '" + dataFechamento + "'";
+
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, conn.GetConexao());
+                MySqlDataReader dr = cmd.ExecuteReader();
+                dr.Read();
+
+                if (dr.HasRows)
+                {
+                    int profissional_id = dr.GetInt32(0);
+                    dr.Close();
+                    return new Profissionais(profissional_id);
+                }
+
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                Erro.Show(ex.Message, defaultError);
+            }
+            finally
+            {
+                conn.Fechar();
+            }
+
+            return new Profissionais();
+        }
+
+        public int GetServico_ID(int caixas_id, string dataAbertura, string dataFechamento)
+        {
+            string sql = @"select servicos.id from movimentos
+                            inner join movimentos_itens_movimento on movimentos.id = movimentos_itens_movimento.movimentos_id
+                            inner join itens_movimento on movimentos_itens_movimento.itens_movimento_id = itens_movimento.id
+                            inner join servicos on servicos.id = itens_movimento.cod_servico_material
+                            where itens_movimento.servico_material = 1 and movimentos.caixas_id = " + caixas_id + " and movimentos.data_movimento BETWEEN '" + dataAbertura + "' and '" + dataFechamento + "'";
+
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, conn.GetConexao());
+                MySqlDataReader dr = cmd.ExecuteReader();
+                dr.Read();
+
+                if (dr.HasRows)
+                {
+                    int servico_id = dr.GetInt32(0);
+                    dr.Close();
+                    return servico_id;
+                }
+
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                Erro.Show(ex.Message, defaultError);
+            }
+            finally
+            {
+                conn.Fechar();
+            }
+
+            return 0;
+        }
+
+        public decimal Total(int movimento_id)
+        {
+            string sql = @"select sum(pagamentos_movimentos.valor - pagamentos_movimentos.desconto) from movimentos 
+                                inner join pagamentos_movimentos on movimentos.pagamentos_movimentos_id = movimentos.id
+                                where movimentos.id = " + movimento_id;
+
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, conn.GetConexao());
+                MySqlDataReader dr = cmd.ExecuteReader();
+                dr.Read();
+
+                if (dr.HasRows)
+                {
+                    decimal valor = dr.GetDecimal(0);
+                    dr.Close();
+                    return valor;
+                }
+
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                Erro.Show(ex.Message, defaultError);
+            }
+            finally
+            {
+                conn.Fechar();
+            }
+            return 0;
+        }
+
         public Movimentos UltimoPorCliente(int id_cliente)
         {
             try
@@ -407,7 +544,7 @@ namespace GuaraTattooSoft.Entidades
 
                 if (dr.HasRows)
                 {
-                   id =  dr.GetInt32(0);
+                    id = dr.GetInt32(0);
                 }
 
                 dr.Close();

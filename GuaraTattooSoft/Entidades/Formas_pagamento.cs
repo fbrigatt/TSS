@@ -185,6 +185,39 @@ namespace GuaraTattooSoft.Entidades
             throw new NotImplementedException();
         }
 
+        public Formas_pagamento GetByMovimento(int movimentos_id)
+        {
+            string sql = @"select formas_pagamento_id from pagamentos_movimentos
+                            inner join movimentos on movimentos.pagamentos_movimentos_id = pagamentos_movimentos.id
+                            where movimentos.id = " + movimentos_id;
+
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, conn.GetConexao());
+                MySqlDataReader dr = cmd.ExecuteReader();
+                dr.Read();
+
+                if(dr.HasRows)
+                {
+                    int fpg_id = dr.GetInt32(0);
+                    dr.Close();
+                    return new Formas_pagamento(fpg_id);
+                }
+
+                dr.Close();
+            }
+            catch(Exception ex)
+            {
+                Erro.Show(ex.Message, defaultError);
+            }
+            finally
+            {
+                conn.Fechar();
+            }
+
+            return new Formas_pagamento();
+        }
+
         public Formas_pagamento GetByServico(int servico_id)
         {
             try

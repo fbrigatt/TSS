@@ -9,7 +9,7 @@ using GuaraTattooSoft.Util;
 
 namespace GuaraTattooSoft.Entidades
 {
-    class Profissionais : IClasse_Persistencia
+    public class Profissionais : IClasse_Persistencia
     {
         Conexao conn = new Conexao();
         string defaultError = "Erro em profissionais";

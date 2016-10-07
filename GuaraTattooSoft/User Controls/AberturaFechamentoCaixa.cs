@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using GuaraTattooSoft.Entidades;
 using GuaraTattooSoft.Util;
 using GuaraTattooSoft.Extencoes;
+using GuaraTattooSoft.Relatorios.DataSets;
+using Microsoft.Reporting.WinForms;
+using GuaraTattooSoft.Relatorios;
 
 namespace GuaraTattooSoft.User_Controls
 {
@@ -36,7 +39,7 @@ namespace GuaraTattooSoft.User_Controls
 
             List<KeyValuePair<int, string>> caixas = new List<KeyValuePair<int, string>>();
 
-            for(int i = 0; i < cx.id_todos.Count; i ++)
+            for (int i = 0; i < cx.id_todos.Count; i++)
             {
                 caixas.Add(new KeyValuePair<int, string>(cx.id_todos[i], cx.nome_todos[i]));
             }
@@ -44,7 +47,7 @@ namespace GuaraTattooSoft.User_Controls
             cbCaixa.DisplayMember = "value";
             cbCaixa.ValueMember = "key";
             cbCaixa.DataSource = new BindingSource(caixas, null);
-          //  if (cbCaixa.Items[0] != null) { cbCaixa.SelectedItem = cbCaixa.Items[0].ToString(); }
+            //  if (cbCaixa.Items[0] != null) { cbCaixa.SelectedItem = cbCaixa.Items[0].ToString(); }
         }
 
         private void VerificaCaixa()
@@ -75,6 +78,37 @@ namespace GuaraTattooSoft.User_Controls
             }
         }
 
+        private void GeraRelatorio(Status_caixa sc)
+        {
+            DataSet ds = new DsCaixa_1();
+
+            string dataAbertura = ((DateTime)sc.Data_abertura).ToString("yyyy-MM-dd HH:mm:ss");
+            string dataFechamento = ((DateTime)sc.Data_fechamento).ToString("yyyy-MM-dd HH:mm:ss");
+
+            Movimentos m = new Movimentos();
+            m.CarregarPorCaixa(sc.Caixas_id, dataAbertura, dataFechamento);
+
+            for (int i = 0; i < m.id_todos.Count; i++)
+            {
+                Formas_pagamento fpg = new Formas_pagamento().GetByMovimento(m.id_todos[i]);
+
+                ds.Tables["movimentos"].Rows.Add(m.data_movimento_todos[i],
+                                                    new Tipos_movimento(m.tipos_movimento_id_todos[i]).Descricao,
+                                                    new Usuarios(m.usuarios_id_todos[i]).Nome,
+                                                    m.GetProfissional(sc.Caixas_id, dataAbertura, dataFechamento).Nome,
+                                                    fpg.Descricao,
+                                                    0,
+                                                    m.Total(m.id_todos[i])
+
+                    );
+            }
+
+            ReportDataSource rds_movimentos = new ReportDataSource();
+            rds_movimentos.Name = "movimentos";
+            rds_movimentos.Value = ds.Tables["movimentos"];
+            new ExibeRelatorio("Relatorios/reports/RelatorioCaixa.rdlc", new List<ReportDataSource>() { rds_movimentos });
+        }
+
         public enum Status
         {
             fechado = 0,
@@ -96,23 +130,23 @@ namespace GuaraTattooSoft.User_Controls
             int idCaixa = int.Parse(cbCaixa.SelectedValue.ToString());
             Status_caixa sc;
 
-            if(status == (int)Status.aberto)
+            if (status == (int)Status.aberto)
             {
                 sc = new Status_caixa(new Status_caixa().LastID(idCaixa));
                 sc.Data_fechamento = DateTime.Now;
                 sc.Atualizar(new Status_caixa().LastID(idCaixa));
 
-                Sucesso.Show("Caixa fechado!");
+                GeraRelatorio(sc);
             }
-            
-            if(status == (int)Status.fechado)
+
+            if (status == (int)Status.fechado)
             {
                 sc = new Status_caixa();
 
                 sc.Caixas_id = idCaixa;
                 sc.Data_abertura = DateTime.Now;
                 sc.Gravar();
-                
+
                 Totais_caixa tc = new Totais_caixa();
                 tc.Caixas_id = idCaixa;
                 tc.Valor = (decimal)txValor.Value;
