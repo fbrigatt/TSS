@@ -38,6 +38,23 @@ namespace GuaraTattooSoft.User_Controls
 
             txNumero.BackgroundStyle.Border = eStyleBorderType.Solid;
             txNumero.BackgroundStyle.BorderColor = Color.Gray;
+            cbCampanha.DropDownStyle = ComboBoxStyle.DropDownList;
+            CarregaCampanhas();
+        }
+
+        private void CarregaCampanhas()
+        {
+            Campanhas c = new Campanhas(true);
+
+            List<KeyValuePair<int, string>> campanhas_kvp = new List<KeyValuePair<int, string>>();
+            for(int i = 0; i < c.id_todos.Count; i++)
+            {
+                campanhas_kvp.Add(new KeyValuePair<int, string>(c.id_todos[i], c.descricao_todos[i]));
+            }
+
+            cbCampanha.DataSource = new BindingSource(campanhas_kvp, null);
+            cbCampanha.DisplayMember = "Value";
+            cbCampanha.ValueMember = "Key";
         }
 
         public void CarregaAnamneses()
@@ -81,6 +98,7 @@ namespace GuaraTattooSoft.User_Controls
             cliente.Referencia = txReferencia.Text;
             cliente.Obs = txObs.Text;
             cliente.DataCadastro = DateTime.Now;
+            cliente.Campanha_id = cbCampanha.Items.Count == 0 ? 0 : int.Parse(cbCampanha.SelectedValue.ToString());
 
             if (modoEdicao == true)
             {
@@ -248,11 +266,8 @@ namespace GuaraTattooSoft.User_Controls
         private void button3_Click(object sender, EventArgs e)
         {
             if (!dataGridClientes.TemLinhas()) return;
-
             string nomeCliente = string.Empty;
-
             if (dataGridClientes.SelectedRows.Count > 0) { nomeCliente = dataGridClientes.CurrentRow.Cells[1].Value.ToString(); } else { return; }
-
             if (new Confirmacao("Deseja realmente excluir o cliente " + nomeCliente + "? \nEsta ação não pode ser revertida!").selection == true)
             {
                 int id = int.Parse(dataGridClientes.CurrentRow.Cells[0].Value.ToString());
@@ -318,6 +333,7 @@ namespace GuaraTattooSoft.User_Controls
             txUF.Text = c.Uf;
             txReferencia.Text = c.Referencia;
             txObs.Text = c.Obs;
+            cbCampanha.SelectedValue = c.Campanha_id;
 
             Clientes_anamneses ca = new Clientes_anamneses(id);
 

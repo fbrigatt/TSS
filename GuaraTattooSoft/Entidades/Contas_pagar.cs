@@ -16,6 +16,7 @@ namespace GuaraTattooSoft.Entidades
 
         public List<int> id_todos = new List<int>();
         public List<int> movimentos_id_todos = new List<int>();
+        public List<string> parcelas_todos = new List<string>();
         public List<int> formas_pagamento_id_todos = new List<int>();
         public List<string> emitente_todos = new List<string>();
         public List<string> destinatario_todos = new List<string>();
@@ -26,6 +27,7 @@ namespace GuaraTattooSoft.Entidades
         public List<bool> pago_todos = new List<bool>();
 
         private int movimentos_id;
+        private string parcela;
         private int formas_pagamento_id;
         private string emitente;
         private string destinatario;
@@ -36,6 +38,8 @@ namespace GuaraTattooSoft.Entidades
         private bool pago;
 
         #region Propriedades
+        public string Parcela { get; set; }
+
         public int Movimentos_id
         {
             get
@@ -190,14 +194,15 @@ namespace GuaraTattooSoft.Entidades
                     {
                         id_todos.Add(dr.GetInt32(0));
                         movimentos_id_todos.Add(dr.GetInt32(1));
-                        formas_pagamento_id_todos.Add(dr.GetInt32(2));
-                        emitente_todos.Add(dr.GetString(3));
-                        destinatario_todos.Add(dr.GetString(4));
-                        descricao_todos.Add(dr.GetString(5));
-                        valor_todos.Add(dr.GetDecimal(6));
-                        vencimento_todos.Add(dr.GetDateTime(7));
-                        juros_todos.Add(dr.GetDouble(8));
-                        pago_todos.Add(dr.GetBoolean(9));
+                        parcelas_todos.Add(dr.GetString(2));
+                        formas_pagamento_id_todos.Add(dr.GetInt32(3));
+                        emitente_todos.Add(dr.GetString(4));
+                        destinatario_todos.Add(dr.GetString(5));
+                        descricao_todos.Add(dr.GetString(6));
+                        valor_todos.Add(dr.GetDecimal(7));
+                        vencimento_todos.Add(dr.GetDateTime(8));
+                        juros_todos.Add(dr.GetDouble(9));
+                        pago_todos.Add(dr.GetBoolean(10));
                     }
                 }
 
@@ -229,14 +234,15 @@ namespace GuaraTattooSoft.Entidades
                     {
                         id_todos.Add(dr.GetInt32(0));
                         movimentos_id_todos.Add(dr.GetInt32(1));
-                        formas_pagamento_id_todos.Add(dr.GetInt32(2));
-                        emitente_todos.Add(dr.GetString(3));
-                        destinatario_todos.Add(dr.GetString(4));
-                        descricao_todos.Add(dr.GetString(5));
-                        valor_todos.Add(dr.GetDecimal(6));
-                        vencimento_todos.Add(dr.GetDateTime(7));
-                        juros_todos.Add(dr.GetDouble(8));
-                        pago_todos.Add(dr.GetBoolean(9));
+                        parcelas_todos.Add(dr.GetString(2));
+                        formas_pagamento_id_todos.Add(dr.GetInt32(3));
+                        emitente_todos.Add(dr.GetString(4));
+                        destinatario_todos.Add(dr.GetString(5));
+                        descricao_todos.Add(dr.GetString(6));
+                        valor_todos.Add(dr.GetDecimal(7));
+                        vencimento_todos.Add(dr.GetDateTime(8));
+                        juros_todos.Add(dr.GetDouble(9));
+                        pago_todos.Add(dr.GetBoolean(10));
                     }
                 }
 
@@ -264,14 +270,15 @@ namespace GuaraTattooSoft.Entidades
                 if (dr.HasRows)
                 {
                     Movimentos_id = dr.GetInt32(1);
-                    Formas_pagamento_id = dr.GetInt32(2);
-                    Emitente = dr.GetString(3);
-                    Destinatario = dr.GetString(4);
-                    Descricao = dr.GetString(5);
-                    Valor = dr.GetDecimal(6);
-                    Vencimento = dr.GetDateTime(7);
-                    Juros = dr.GetDouble(8);
-                    Pago = dr.GetBoolean(9);
+                    Parcela = dr.GetString(2);
+                    Formas_pagamento_id = dr.GetInt32(3);
+                    Emitente = dr.GetString(4);
+                    Destinatario = dr.GetString(5);
+                    Descricao = dr.GetString(6);
+                    Valor = dr.GetDecimal(7);
+                    Vencimento = dr.GetDateTime(8);
+                    Juros = dr.GetDouble(9);
+                    Pago = dr.GetBoolean(10);
                 }
 
                 dr.Close();
@@ -291,17 +298,28 @@ namespace GuaraTattooSoft.Entidades
         {
             try
             {
-                MySqlCommand cmd = new MySqlCommand("update contas_pagar set movimentos_id = @1, formas_pagamento_id = @2, emitente = @3, destinatario = @4, descricao = @5, valor = @6, vencimento = @7, juros = @8, pago = @9 where id = " + id, conn.GetConexao());
+                MySqlCommand cmd = new MySqlCommand(@"update contas_pagar set 
+                                                        movimentos_id = @1, 
+                                                        formas_pagamento_id = @2,
+                                                        parcela = @3, 
+                                                        emitente = @4, 
+                                                        destinatario = @5,
+                                                        descricao = @6,
+                                                        valor = @7,
+                                                        vencimento = @8,
+                                                        juros = @9,
+                                                        pago = @10 where id = " + id, conn.GetConexao());
 
                 cmd.Parameters.AddWithValue("@1", Movimentos_id);
                 cmd.Parameters.AddWithValue("@2", Formas_pagamento_id);
-                cmd.Parameters.AddWithValue("@3", Emitente);
-                cmd.Parameters.AddWithValue("@4", Destinatario);
-                cmd.Parameters.AddWithValue("@5", Descricao);
-                cmd.Parameters.AddWithValue("@6", Valor);
-                cmd.Parameters.AddWithValue("@7", Vencimento);
-                cmd.Parameters.AddWithValue("@8", Juros);
-                cmd.Parameters.AddWithValue("@9", Pago);
+                cmd.Parameters.AddWithValue("@3", Parcela);
+                cmd.Parameters.AddWithValue("@4", Emitente);
+                cmd.Parameters.AddWithValue("@5", Destinatario);
+                cmd.Parameters.AddWithValue("@6", Descricao);
+                cmd.Parameters.AddWithValue("@7", Valor);
+                cmd.Parameters.AddWithValue("@8", Vencimento);
+                cmd.Parameters.AddWithValue("@9", Juros);
+                cmd.Parameters.AddWithValue("@10", Pago);
 
                 cmd.ExecuteNonQuery();
 
@@ -338,17 +356,20 @@ namespace GuaraTattooSoft.Entidades
         {
             try
             {
-                MySqlCommand cmd = new MySqlCommand("insert into contas_pagar(movimentos_id, formas_pagamento_id, emitente, destinatario, descricao, valor, vencimento, juros, pago) values(@1, @2, @3, @4, @5, @6, @7, @8, @9)", conn.GetConexao());
+                MySqlCommand cmd = new MySqlCommand(@"insert into contas_pagar
+                    (movimentos_id, parcela, formas_pagamento_id, emitente, destinatario, descricao, valor, vencimento, juros, pago)
+                    values(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10)", conn.GetConexao());
 
                 cmd.Parameters.AddWithValue("@1", Movimentos_id);
-                cmd.Parameters.AddWithValue("@2", Formas_pagamento_id);
-                cmd.Parameters.AddWithValue("@3", Emitente);
-                cmd.Parameters.AddWithValue("@4", Destinatario);
-                cmd.Parameters.AddWithValue("@5", Descricao);
-                cmd.Parameters.AddWithValue("@6", Valor);
-                cmd.Parameters.AddWithValue("@7", Vencimento);
-                cmd.Parameters.AddWithValue("@8", Juros);
-                cmd.Parameters.AddWithValue("@9", Pago);
+                cmd.Parameters.AddWithValue("@2", Parcela);
+                cmd.Parameters.AddWithValue("@3", Formas_pagamento_id);
+                cmd.Parameters.AddWithValue("@4", Emitente);
+                cmd.Parameters.AddWithValue("@5", Destinatario);
+                cmd.Parameters.AddWithValue("@6", Descricao);
+                cmd.Parameters.AddWithValue("@7", Valor);
+                cmd.Parameters.AddWithValue("@8", Vencimento);
+                cmd.Parameters.AddWithValue("@9", Juros);
+                cmd.Parameters.AddWithValue("@10", Pago);
 
                 cmd.ExecuteNonQuery();
 
@@ -391,14 +412,15 @@ namespace GuaraTattooSoft.Entidades
                     {
                         id_todos.Add(dr.GetInt32(0));
                         movimentos_id_todos.Add(dr.GetInt32(1));
-                        formas_pagamento_id_todos.Add(dr.GetInt32(2));
-                        emitente_todos.Add(dr.GetString(3));
-                        destinatario_todos.Add(dr.GetString(4));
-                        descricao_todos.Add(dr.GetString(5));
-                        valor_todos.Add(dr.GetDecimal(6));
-                        vencimento_todos.Add(dr.GetDateTime(7));
-                        juros_todos.Add(dr.GetDouble(8));
-                        pago_todos.Add(dr.GetBoolean(9));
+                        parcelas_todos.Add(dr.GetString(2));
+                        formas_pagamento_id_todos.Add(dr.GetInt32(3));
+                        emitente_todos.Add(dr.GetString(4));
+                        destinatario_todos.Add(dr.GetString(5));
+                        descricao_todos.Add(dr.GetString(6));
+                        valor_todos.Add(dr.GetDecimal(7));
+                        vencimento_todos.Add(dr.GetDateTime(8));
+                        juros_todos.Add(dr.GetDouble(9));
+                        pago_todos.Add(dr.GetBoolean(10));
                     }
                 }
 

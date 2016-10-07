@@ -42,15 +42,15 @@ namespace GuaraTattooSoft.User_Controls
             {
                 string pago = cp.pago_todos[i] == true ? pago = "SIM" : pago = "NÃO";
                 Formas_pagamento forma_pag = new Formas_pagamento(cp.formas_pagamento_id_todos[i]);
-                dataGridContas.Rows.Add(cp.id_todos[i], cp.movimentos_id_todos[i], cp.descricao_todos[i], forma_pag.Descricao, cp.emitente_todos[i], cp.destinatario_todos[i], cp.valor_todos[i], cp.vencimento_todos[i].ToShortDateString(), cp.juros_todos[i], pago);
+                dataGridContas.Rows.Add(cp.id_todos[i], cp.movimentos_id_todos[i], cp.descricao_todos[i], cp.parcelas_todos[i], forma_pag.Descricao, cp.emitente_todos[i], cp.destinatario_todos[i], cp.valor_todos[i], cp.vencimento_todos[i].ToShortDateString(), cp.juros_todos[i], pago);
             }
 
         }
 
         private void dataGridContas_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridContas.CurrentRow.Cells[9].Value.ToString() == "SIM") btRegistrarPag.Visible = false;
-            if (dataGridContas.CurrentRow.Cells[9].Value.ToString() == "NÃO") btRegistrarPag.Visible = true;
+            if (dataGridContas.CurrentRow.Cells[10].Value.ToString() == "SIM") btRegistrarPag.Visible = false;
+            if (dataGridContas.CurrentRow.Cells[10].Value.ToString() == "NÃO") btRegistrarPag.Visible = true;
         }
 
         private void txPesquisa_TextChanged(object sender, EventArgs e)

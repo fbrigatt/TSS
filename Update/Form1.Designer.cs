@@ -35,6 +35,7 @@
             this.btSair = new System.Windows.Forms.Button();
             this.recursos = new System.Windows.Forms.ListBox();
             this.progresso = new System.Windows.Forms.ProgressBar();
+            this.btUpDB = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button2
@@ -101,12 +102,23 @@
             this.progresso.Size = new System.Drawing.Size(625, 18);
             this.progresso.TabIndex = 9;
             // 
+            // btUpDB
+            // 
+            this.btUpDB.Location = new System.Drawing.Point(15, 413);
+            this.btUpDB.Name = "btUpDB";
+            this.btUpDB.Size = new System.Drawing.Size(114, 23);
+            this.btUpDB.TabIndex = 10;
+            this.btUpDB.Text = "Update DB";
+            this.btUpDB.UseVisualStyleBackColor = true;
+            this.btUpDB.Click += new System.EventHandler(this.btUpDB_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(652, 448);
+            this.Controls.Add(this.btUpDB);
             this.Controls.Add(this.progresso);
             this.Controls.Add(this.recursos);
             this.Controls.Add(this.btSair);
@@ -132,6 +144,7 @@
         private System.Windows.Forms.Button btSair;
         private System.Windows.Forms.ListBox recursos;
         private System.Windows.Forms.ProgressBar progresso;
+        private System.Windows.Forms.Button btUpDB;
     }
 }
 

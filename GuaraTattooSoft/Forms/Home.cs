@@ -24,15 +24,7 @@ namespace GuaraTattooSoft.Forms
             this.AplicarPadroes();
             tabControl.AplicarPadroes();
 
-            this.Text = "Tattoo Smart Soft - 1.2.5 - BETA";
-
-            //tabControl.TabPages.Clear();
-            //PaginaInicial pg_ini = new PaginaInicial();
-            //TabPage page = new TabPage("Página inicial");
-            //page.Controls.Add(pg_ini);
-            //tabControl.Adicionar(page);
-
-           // page.Width = tabControl.Width;
+            this.Text = "Tattoo Smart Soft - Versão 1.3 - Final";
         }
 
         private void Home_FormClosed(object sender, FormClosedEventArgs e)
@@ -152,6 +144,14 @@ namespace GuaraTattooSoft.Forms
                     CadastroTiposServico cts = new CadastroTiposServico();
                     tabPage = new TabPage("Cadastro de Tipos de Serviço");
                     tabPage.Controls.Add(cts);
+                    tabControl.Adicionar(tabPage);
+                    break;
+
+                case "Cadastro de Campanhas de Marketing":
+
+                    CadastroCampanhas cadCamp = new CadastroCampanhas();
+                    tabPage = new TabPage("Campanhas de marketing");
+                    tabPage.Controls.Add(cadCamp);
                     tabControl.Adicionar(tabPage);
                     break;
 

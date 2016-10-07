@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuaraTattooSoft", "GuaraTat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Update", "Update\Update.csproj", "{5369BF70-923C-4A75-964F-98E48BEF7DA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoUpdate", "InfoUpdate\InfoUpdate.csproj", "{E2414948-A41B-472E-8072-F1AF4191CB95}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,14 +31,6 @@ Global
 		{5369BF70-923C-4A75-964F-98E48BEF7DA3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5369BF70-923C-4A75-964F-98E48BEF7DA3}.Release|x86.ActiveCfg = Release|Any CPU
 		{5369BF70-923C-4A75-964F-98E48BEF7DA3}.Release|x86.Build.0 = Release|Any CPU
-		{E2414948-A41B-472E-8072-F1AF4191CB95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E2414948-A41B-472E-8072-F1AF4191CB95}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E2414948-A41B-472E-8072-F1AF4191CB95}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{E2414948-A41B-472E-8072-F1AF4191CB95}.Debug|x86.Build.0 = Debug|Any CPU
-		{E2414948-A41B-472E-8072-F1AF4191CB95}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E2414948-A41B-472E-8072-F1AF4191CB95}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E2414948-A41B-472E-8072-F1AF4191CB95}.Release|x86.ActiveCfg = Release|Any CPU
-		{E2414948-A41B-472E-8072-F1AF4191CB95}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

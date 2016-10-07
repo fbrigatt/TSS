@@ -83,6 +83,8 @@
             this.txPesquisa = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
+            this.cbCampanha = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txNumero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -277,7 +279,7 @@
             this.txNumero.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txNumero.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
             this.txNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txNumero.Location = new System.Drawing.Point(830, 150);
+            this.txNumero.Location = new System.Drawing.Point(665, 150);
             this.txNumero.Name = "txNumero";
             this.txNumero.Size = new System.Drawing.Size(81, 22);
             this.txNumero.TabIndex = 13;
@@ -285,7 +287,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(827, 134);
+            this.label12.Location = new System.Drawing.Point(662, 134);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(44, 13);
             this.label12.TabIndex = 24;
@@ -297,7 +299,7 @@
             this.txLogradouro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txLogradouro.Location = new System.Drawing.Point(289, 150);
             this.txLogradouro.Name = "txLogradouro";
-            this.txLogradouro.Size = new System.Drawing.Size(478, 22);
+            this.txLogradouro.Size = new System.Drawing.Size(311, 22);
             this.txLogradouro.TabIndex = 11;
             // 
             // label11
@@ -312,7 +314,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(770, 134);
+            this.label13.Location = new System.Drawing.Point(605, 134);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(21, 13);
             this.label13.TabIndex = 26;
@@ -322,7 +324,7 @@
             // 
             this.txUF.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txUF.Location = new System.Drawing.Point(773, 150);
+            this.txUF.Location = new System.Drawing.Point(608, 150);
             this.txUF.Name = "txUF";
             this.txUF.Size = new System.Drawing.Size(51, 22);
             this.txUF.TabIndex = 12;
@@ -601,6 +603,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.label17);
+            this.splitContainer1.Panel1.Controls.Add(this.cbCampanha);
             this.splitContainer1.Panel1.Controls.Add(this.button2);
             this.splitContainer1.Panel1.Controls.Add(this.listaAnamneses);
             this.splitContainer1.Panel1.Controls.Add(this.button1);
@@ -658,6 +662,23 @@
             this.line1.TabIndex = 41;
             this.line1.Text = "line1";
             this.line1.Thickness = 3;
+            // 
+            // cbCampanha
+            // 
+            this.cbCampanha.FormattingEnabled = true;
+            this.cbCampanha.Location = new System.Drawing.Point(753, 150);
+            this.cbCampanha.Name = "cbCampanha";
+            this.cbCampanha.Size = new System.Drawing.Size(158, 21);
+            this.cbCampanha.TabIndex = 38;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(750, 134);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(137, 13);
+            this.label17.TabIndex = 39;
+            this.label17.Text = "Como conheceu o estúdio?";
             // 
             // CadastroClientes
             // 
@@ -735,5 +756,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private DevComponents.DotNetBar.Controls.Line line1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cbCampanha;
     }
 }

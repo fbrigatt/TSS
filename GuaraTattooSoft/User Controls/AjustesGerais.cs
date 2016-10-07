@@ -57,7 +57,6 @@ namespace GuaraTattooSoft.User_Controls
             config.Tipos_servico_id = txCodTipo_serv.Value;
 
             config.Atualizar();
-
         }
 
         private void btEscolherImagem_Click(object sender, EventArgs e)

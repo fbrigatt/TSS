@@ -247,7 +247,7 @@ namespace GuaraTattooSoft.Entidades
 
                 cmd.ExecuteNonQuery();
 
-               // Sucesso.Show("Configurações atualizadas!");
+                Sucesso.Show("Configurações atualizadas!");
 
             }
             catch(MySqlException ex)

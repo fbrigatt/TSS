@@ -225,12 +225,13 @@ namespace GuaraTattooSoft.User_Controls
                     if (parcelamento.contaPagar == true)
                     {
                         Contas_pagar cp = new Contas_pagar();
-
+                        int parcela = 1;
                         foreach (DataGridViewRow row in parcelamento.dataGridParcelas.Rows)
                         {
                             lbProgresso.Text = "Gerando contas a pagar " + row.Index + " de " + parcelamento.dataGridParcelas.Rows.Count;
 
                             cp.Movimentos_id = idMov;
+                            cp.Parcela = parcela + "/" + parcelamento.dataGridParcelas.Rows.Count;
                             cp.Formas_pagamento_id = txCodFormaPag.Value;
                             cp.Emitente = parcelamento.cbOperadoras.Text;
                             cp.Destinatario = new Loja(1).Nome_fantasia;
@@ -241,19 +242,21 @@ namespace GuaraTattooSoft.User_Controls
                             cp.Pago = false;
 
                             cp.Gravar();
+                            parcela++;
                         }
                     }
 
                     if (parcelamento.contaPagar == false)
                     {
                         Contas_receber cr = new Contas_receber();
-
+                        int parcela = 1;
                         foreach (DataGridViewRow row in parcelamento.dataGridParcelas.Rows)
                         {
                             lbProgresso.Text = "Gerando contas a receber " + row.Index + " de " + parcelamento.dataGridParcelas.Rows.Count;
 
                             cr.Movimentos_id = idMov;
                             cr.Formas_pagamento_id = txCodFormaPag.Value;
+                            cr.Parcela = parcela + "/" + parcelamento.dataGridParcelas.Rows.Count;
                             cr.Emitente = new Loja(1).Nome_fantasia;
                             cr.Destinatario = new Formas_pagamento(txCodFormaPag.Value).Permitir_parcel ? cr.Destinatario = parcelamento.cbOperadoras.Text : cr.Destinatario = txNomeCliente.Text;
                             cr.Descricao = new Tipos_movimento(txCodTipoMov.Value).Descricao;
@@ -263,6 +266,7 @@ namespace GuaraTattooSoft.User_Controls
                             cr.Pago = false;
 
                             cr.Gravar();
+                            parcela++;
                         }
                     }
                 }

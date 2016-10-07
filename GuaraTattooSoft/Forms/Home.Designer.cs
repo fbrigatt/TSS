@@ -39,7 +39,8 @@
             System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Cadastro de Profissionais");
             System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Cadastro de Tipos de Serviços");
             System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Cadastro de Operadoras de Cartão");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Cadastros", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Cadastro de Campanhas de Marketing");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Cadastros", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2,
             treeNode3,
@@ -49,49 +50,50 @@
             treeNode7,
             treeNode8,
             treeNode9,
-            treeNode10});
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Registro de Procedimentos");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Histórico de Procedimentos");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Atualizações", new System.Windows.Forms.TreeNode[] {
-            treeNode11,
+            treeNode10,
+            treeNode11});
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Registro de Procedimentos");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Histórico de Procedimentos");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Atualizações", new System.Windows.Forms.TreeNode[] {
             treeNode12,
-            treeNode13});
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Próximos Compromissos");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Agenda", new System.Windows.Forms.TreeNode[] {
-            treeNode15});
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Retirada de Valor no Caixa");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Totais em Comissões por profissional");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Lançamento de Movimentos");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Abertura / Fechamento de Caixa");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Contas a Pagar");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Contas a Receber");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Alterar Comissão de Profissionais");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Consulta de movimentos");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Financeiro", new System.Windows.Forms.TreeNode[] {
-            treeNode17,
+            treeNode13,
+            treeNode14});
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Próximos Compromissos");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Agenda", new System.Windows.Forms.TreeNode[] {
+            treeNode16});
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Retirada de Valor no Caixa");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Totais em Comissões por profissional");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Lançamento de Movimentos");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Abertura / Fechamento de Caixa");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Contas a Pagar");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Contas a Receber");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Alterar Comissão de Profissionais");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Consulta de movimentos");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Financeiro", new System.Windows.Forms.TreeNode[] {
             treeNode18,
             treeNode19,
             treeNode20,
             treeNode21,
             treeNode22,
             treeNode23,
-            treeNode24});
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Relatório de Clientes");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Relatório de Vendas de Materias / Produtos");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Relatório de Profissionais");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Conferência de Estoque");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Relatórios", new System.Windows.Forms.TreeNode[] {
-            treeNode26,
+            treeNode24,
+            treeNode25});
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Relatório de Clientes");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Relatório de Vendas de Materias / Produtos");
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Relatório de Profissionais");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Conferência de Estoque");
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Relatórios", new System.Windows.Forms.TreeNode[] {
             treeNode27,
             treeNode28,
-            treeNode29});
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Modelos de email");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Ajustes gerais");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Alterar informações da loja");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Ajustes", new System.Windows.Forms.TreeNode[] {
-            treeNode31,
+            treeNode29,
+            treeNode30});
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Modelos de email");
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Ajustes gerais");
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Alterar informações da loja");
+            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Ajustes", new System.Windows.Forms.TreeNode[] {
             treeNode32,
-            treeNode33});
+            treeNode33,
+            treeNode34});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             tabControl = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -167,65 +169,67 @@
             treeNode9.Text = "Cadastro de Tipos de Serviços";
             treeNode10.Name = "Nó0";
             treeNode10.Text = "Cadastro de Operadoras de Cartão";
-            treeNode11.Name = "Nó4";
-            treeNode11.Text = "Cadastros";
-            treeNode12.Name = "Serv";
-            treeNode12.Text = "Registro de Procedimentos";
-            treeNode13.Name = "Nó1";
-            treeNode13.Text = "Histórico de Procedimentos";
-            treeNode14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            treeNode14.Name = "Nó0";
-            treeNode14.Text = "Atualizações";
-            treeNode15.Name = "Nó21";
-            treeNode15.Text = "Próximos Compromissos";
-            treeNode16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            treeNode16.Name = "Nó3";
-            treeNode16.Text = "Agenda";
-            treeNode17.Name = "Nó0";
-            treeNode17.Text = "Retirada de Valor no Caixa";
+            treeNode11.Name = "Nó0";
+            treeNode11.Text = "Cadastro de Campanhas de Marketing";
+            treeNode12.Name = "Nó4";
+            treeNode12.Text = "Cadastros";
+            treeNode13.Name = "Serv";
+            treeNode13.Text = "Registro de Procedimentos";
+            treeNode14.Name = "Nó1";
+            treeNode14.Text = "Histórico de Procedimentos";
+            treeNode15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            treeNode15.Name = "Nó0";
+            treeNode15.Text = "Atualizações";
+            treeNode16.Name = "Nó21";
+            treeNode16.Text = "Próximos Compromissos";
+            treeNode17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            treeNode17.Name = "Nó3";
+            treeNode17.Text = "Agenda";
             treeNode18.Name = "Nó0";
-            treeNode18.Text = "Totais em Comissões por profissional";
-            treeNode19.Name = "Nó24";
-            treeNode19.Text = "Lançamento de Movimentos";
-            treeNode20.Name = "Nó26";
-            treeNode20.Text = "Abertura / Fechamento de Caixa";
-            treeNode21.Name = "Nó27";
-            treeNode21.Text = "Contas a Pagar";
-            treeNode22.Name = "Nó28";
-            treeNode22.Text = "Contas a Receber";
-            treeNode23.Name = "Nó35";
-            treeNode23.Text = "Alterar Comissão de Profissionais";
-            treeNode24.Name = "Nó1";
-            treeNode24.Text = "Consulta de movimentos";
-            treeNode25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            treeNode25.Name = "Nó2";
-            treeNode25.Text = "Financeiro";
-            treeNode26.Name = "Nó32";
-            treeNode26.Text = "Relatório de Clientes";
-            treeNode27.Name = "Nó33";
-            treeNode27.Text = "Relatório de Vendas de Materias / Produtos";
-            treeNode28.Name = "Nó34";
-            treeNode28.Text = "Relatório de Profissionais";
-            treeNode29.Name = "Conferência de Estoque";
-            treeNode29.Text = "Conferência de Estoque";
-            treeNode30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            treeNode30.Name = "Relatórios";
-            treeNode30.Text = "Relatórios";
-            treeNode31.Name = "Nó1";
-            treeNode31.Text = "Modelos de email";
-            treeNode32.Name = "Nó2";
-            treeNode32.Text = "Ajustes gerais";
-            treeNode33.Name = "Nó0";
-            treeNode33.Text = "Alterar informações da loja";
-            treeNode34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            treeNode34.Name = "Ajustes";
-            treeNode34.Text = "Ajustes";
+            treeNode18.Text = "Retirada de Valor no Caixa";
+            treeNode19.Name = "Nó0";
+            treeNode19.Text = "Totais em Comissões por profissional";
+            treeNode20.Name = "Nó24";
+            treeNode20.Text = "Lançamento de Movimentos";
+            treeNode21.Name = "Nó26";
+            treeNode21.Text = "Abertura / Fechamento de Caixa";
+            treeNode22.Name = "Nó27";
+            treeNode22.Text = "Contas a Pagar";
+            treeNode23.Name = "Nó28";
+            treeNode23.Text = "Contas a Receber";
+            treeNode24.Name = "Nó35";
+            treeNode24.Text = "Alterar Comissão de Profissionais";
+            treeNode25.Name = "Nó1";
+            treeNode25.Text = "Consulta de movimentos";
+            treeNode26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            treeNode26.Name = "Nó2";
+            treeNode26.Text = "Financeiro";
+            treeNode27.Name = "Nó32";
+            treeNode27.Text = "Relatório de Clientes";
+            treeNode28.Name = "Nó33";
+            treeNode28.Text = "Relatório de Vendas de Materias / Produtos";
+            treeNode29.Name = "Nó34";
+            treeNode29.Text = "Relatório de Profissionais";
+            treeNode30.Name = "Conferência de Estoque";
+            treeNode30.Text = "Conferência de Estoque";
+            treeNode31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            treeNode31.Name = "Relatórios";
+            treeNode31.Text = "Relatórios";
+            treeNode32.Name = "Nó1";
+            treeNode32.Text = "Modelos de email";
+            treeNode33.Name = "Nó2";
+            treeNode33.Text = "Ajustes gerais";
+            treeNode34.Name = "Nó0";
+            treeNode34.Text = "Alterar informações da loja";
+            treeNode35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            treeNode35.Name = "Ajustes";
+            treeNode35.Text = "Ajustes";
             this.menu.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode14,
-            treeNode16,
-            treeNode25,
-            treeNode30,
-            treeNode34});
+            treeNode15,
+            treeNode17,
+            treeNode26,
+            treeNode31,
+            treeNode35});
             this.menu.Size = new System.Drawing.Size(343, 488);
             this.menu.TabIndex = 1;
             this.menu.DoubleClick += new System.EventHandler(this.menu_DoubleClick);

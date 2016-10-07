@@ -110,5 +110,10 @@ namespace Update
         {
             Instalar();
         }
+
+        private void btUpDB_Click(object sender, EventArgs e)
+        {
+            new UpdateDB().ShowDialog();
+        }
     }
 }

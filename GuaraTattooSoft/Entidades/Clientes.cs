@@ -31,6 +31,7 @@ namespace GuaraTattooSoft.Entidades
         public List<string> referencia_todos = new List<string>();
         public List<string> obs_todos = new List<string>();
         public List<DateTime> dataCadastro_todos = new List<DateTime>();
+        public List<int> campanha_id_todos = new List<int>();
 
         #region Variaveis
         string nome;
@@ -49,9 +50,21 @@ namespace GuaraTattooSoft.Entidades
         string referencia;
         string obs;
         DateTime dataCadastro;
+        int campanha_id;
         #endregion
 
         #region Propriedades
+        public int Campanha_id
+        {
+            get
+            {
+                return campanha_id;
+            }
+            set
+            {
+                this.campanha_id = value;
+            }
+        }
         public string Nome
         {
             get
@@ -290,6 +303,7 @@ namespace GuaraTattooSoft.Entidades
                         referencia_todos.Add(dr.GetString(14));
                         obs_todos.Add(dr.GetString(15));
                         dataCadastro_todos.Add(dr.GetDateTime(16));
+                        campanha_id_todos.Add(dr.GetInt32(17));
                     }
                 }
             }
@@ -329,6 +343,7 @@ namespace GuaraTattooSoft.Entidades
                     Referencia = dr.GetString(14);
                     Obs = dr.GetString(15);
                     DataCadastro = dr.GetDateTime(16);
+                    Campanha_id = dr.GetInt32(0);
                 }
 
                 dr.Close();
@@ -349,7 +364,23 @@ namespace GuaraTattooSoft.Entidades
         {
             try
             {
-                MySqlCommand cmd = new MySqlCommand("update clientes set nome = @1, telefone = @2, celular = @3, email = @4, CPF = @5, RG = @6, dataNasc = @7, CEP = @8, cidade = @9, bairro = @10, logradouro = @11, numero = @12, UF = @13, referencia = @14, obs = @15 where id = " + id, conn.GetConexao());
+                MySqlCommand cmd = new MySqlCommand(@"update clientes set 
+                                                        nome = @1,
+                                                        telefone = @2, 
+                                                        celular = @3,
+                                                        email = @4,
+                                                        CPF = @5, 
+                                                        RG = @6,
+                                                        dataNasc = @7,
+                                                        CEP = @8, 
+                                                        cidade = @9,
+                                                        bairro = @10,
+                                                        logradouro = @11,
+                                                        numero = @12,
+                                                        UF = @13, 
+                                                        referencia = @14,
+                                                        obs = @15,
+                                                        campanha_id = @16 where id = " + id, conn.GetConexao());
 
                 cmd.Parameters.AddWithValue("@1", Nome);
                 cmd.Parameters.AddWithValue("@2", Telefone);
@@ -366,6 +397,7 @@ namespace GuaraTattooSoft.Entidades
                 cmd.Parameters.AddWithValue("@13", Uf);
                 cmd.Parameters.AddWithValue("@14", Referencia);
                 cmd.Parameters.AddWithValue("@15", Obs);
+                cmd.Parameters.AddWithValue("@16", Campanha_id);
 
                 cmd.ExecuteNonQuery();
 
@@ -405,7 +437,7 @@ namespace GuaraTattooSoft.Entidades
         {
             try
             {
-                MySqlCommand cmd = new MySqlCommand("insert into clientes(nome, telefone, celular, email, CPF, RG, dataNasc, CEP, cidade, bairro, logradouro, numero, UF, referencia, obs, dataCadastro) values(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12, @13, @14, @15, @16)", conn.GetConexao());
+                MySqlCommand cmd = new MySqlCommand("insert into clientes(nome, telefone, celular, email, CPF, RG, dataNasc, CEP, cidade, bairro, logradouro, numero, UF, referencia, obs, dataCadastro, campanha_id) values(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12, @13, @14, @15, @16, @17)", conn.GetConexao());
 
                 cmd.Parameters.AddWithValue("@1", Nome);
                 cmd.Parameters.AddWithValue("@2", Telefone);
@@ -423,6 +455,7 @@ namespace GuaraTattooSoft.Entidades
                 cmd.Parameters.AddWithValue("@14", Referencia);
                 cmd.Parameters.AddWithValue("@15", Obs);
                 cmd.Parameters.AddWithValue("@16", DataCadastro);
+                cmd.Parameters.AddWithValue("@17", Campanha_id);
 
                 cmd.ExecuteNonQuery();
 
@@ -504,6 +537,7 @@ namespace GuaraTattooSoft.Entidades
                         referencia_todos.Add(dr.GetString(14));
                         obs_todos.Add(dr.GetString(15));
                         dataCadastro_todos.Add(dr.GetDateTime(16));
+                        campanha_id_todos.Add(dr.GetInt32(17));
                     }
                 }
             }
@@ -548,6 +582,7 @@ namespace GuaraTattooSoft.Entidades
                         referencia_todos.Add(dr.GetString(14));
                         obs_todos.Add(dr.GetString(15));
                         dataCadastro_todos.Add(dr.GetDateTime(16));
+                        campanha_id_todos.Add(dr.GetInt32(17));
                     }
                 }
 
@@ -590,6 +625,7 @@ namespace GuaraTattooSoft.Entidades
                     referencia_todos.Add(cliente.Referencia);
                     obs_todos.Add(cliente.Obs);
                     dataCadastro_todos.Add(cliente.DataCadastro);
+                    campanha_id_todos.Add(cliente.Campanha_id);
                 }
 
             }
@@ -604,7 +640,7 @@ namespace GuaraTattooSoft.Entidades
             return new Movimentos().UltimoPorCliente(id);
         }
 
-        public void ListarPorDataCadastro(DateTime data_inicio, DateTime data_fim)
+        public void ListarPorDataCadastro(DateTime data_inicio, DateTime data_fim) // data de cadastro inicial e final
         {
             try
             {
@@ -640,6 +676,7 @@ namespace GuaraTattooSoft.Entidades
                         referencia_todos.Add(dr.GetString(14));
                         obs_todos.Add(dr.GetString(15));
                         dataCadastro_todos.Add(dr.GetDateTime(16));
+                        campanha_id_todos.Add(dr.GetInt32(17));
                     }
 
                 }

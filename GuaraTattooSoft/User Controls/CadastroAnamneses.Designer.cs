@@ -42,7 +42,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 15);
+            this.label1.Location = new System.Drawing.Point(3, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 13);
             this.label1.TabIndex = 0;
@@ -51,14 +51,14 @@
             // txDescricao
             // 
             this.txDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txDescricao.Location = new System.Drawing.Point(21, 32);
+            this.txDescricao.Location = new System.Drawing.Point(6, 20);
             this.txDescricao.Name = "txDescricao";
-            this.txDescricao.Size = new System.Drawing.Size(421, 22);
+            this.txDescricao.Size = new System.Drawing.Size(458, 22);
             this.txDescricao.TabIndex = 1;
             // 
             // btExcluir
             // 
-            this.btExcluir.Location = new System.Drawing.Point(286, 76);
+            this.btExcluir.Location = new System.Drawing.Point(308, 48);
             this.btExcluir.Name = "btExcluir";
             this.btExcluir.Size = new System.Drawing.Size(75, 23);
             this.btExcluir.TabIndex = 3;
@@ -68,7 +68,7 @@
             // 
             // btAlterar
             // 
-            this.btAlterar.Location = new System.Drawing.Point(205, 76);
+            this.btAlterar.Location = new System.Drawing.Point(227, 48);
             this.btAlterar.Name = "btAlterar";
             this.btAlterar.Size = new System.Drawing.Size(75, 23);
             this.btAlterar.TabIndex = 4;
@@ -86,10 +86,10 @@
             this.dataGridAnamneses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Descrição});
-            this.dataGridAnamneses.Location = new System.Drawing.Point(21, 106);
+            this.dataGridAnamneses.Location = new System.Drawing.Point(6, 77);
             this.dataGridAnamneses.Name = "dataGridAnamneses";
             this.dataGridAnamneses.ReadOnly = true;
-            this.dataGridAnamneses.Size = new System.Drawing.Size(421, 333);
+            this.dataGridAnamneses.Size = new System.Drawing.Size(458, 350);
             this.dataGridAnamneses.TabIndex = 5;
             // 
             // Column1
@@ -113,7 +113,7 @@
             this.btGravar.FlatAppearance.BorderSize = 0;
             this.btGravar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btGravar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btGravar.Location = new System.Drawing.Point(367, 76);
+            this.btGravar.Location = new System.Drawing.Point(389, 48);
             this.btGravar.Name = "btGravar";
             this.btGravar.Size = new System.Drawing.Size(75, 23);
             this.btGravar.TabIndex = 2;

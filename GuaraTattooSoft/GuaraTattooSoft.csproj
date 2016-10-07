@@ -213,6 +213,7 @@
     <Compile Include="Entidades\Agenda.cs" />
     <Compile Include="Entidades\Anamneses.cs" />
     <Compile Include="Entidades\Caixas.cs" />
+    <Compile Include="Entidades\Campanhas.cs" />
     <Compile Include="Entidades\Clientes.cs" />
     <Compile Include="Entidades\Clientes_anamneses.cs" />
     <Compile Include="Entidades\Config.cs" />
@@ -434,6 +435,12 @@
     </Compile>
     <Compile Include="User Controls\AlterarComissao.Designer.cs">
       <DependentUpon>AlterarComissao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\CadastroCampanhas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\CadastroCampanhas.Designer.cs">
+      <DependentUpon>CadastroCampanhas.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\CadastroEmpresa.cs">
       <SubType>UserControl</SubType>
@@ -728,6 +735,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\CadastroCaixa.resx">
       <DependentUpon>CadastroCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\CadastroCampanhas.resx">
+      <DependentUpon>CadastroCampanhas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\CadastroClientes.resx">
       <DependentUpon>CadastroClientes.cs</DependentUpon>
