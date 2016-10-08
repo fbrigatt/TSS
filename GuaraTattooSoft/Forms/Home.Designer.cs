@@ -99,6 +99,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.menu = new System.Windows.Forms.TreeView();
             this.painelMenu = new DevComponents.DotNetBar.PanelEx();
+            this.imgLogo = new System.Windows.Forms.PictureBox();
             this.ribbonClientPanel1 = new DevComponents.DotNetBar.Ribbon.RibbonClientPanel();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.painelTab = new DevComponents.DotNetBar.PanelEx();
@@ -111,6 +112,7 @@
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             tabControl.SuspendLayout();
             this.painelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.ribbonClientPanel1.SuspendLayout();
             this.painelTab.SuspendLayout();
             this.ribbonClientPanel2.SuspendLayout();
@@ -125,7 +127,7 @@
             tabControl.Location = new System.Drawing.Point(3, 38);
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
-            tabControl.Size = new System.Drawing.Size(640, 499);
+            tabControl.Size = new System.Drawing.Size(729, 499);
             tabControl.TabIndex = 0;
             // 
             // tabPage2
@@ -133,21 +135,22 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(632, 473);
+            this.tabPage2.Size = new System.Drawing.Size(721, 473);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Página inicial";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // menu
             // 
-            this.menu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.menu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.menu.BackColor = System.Drawing.Color.White;
             this.menu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.menu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menu.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.menu.Location = new System.Drawing.Point(3, 38);
+            this.menu.Location = new System.Drawing.Point(4, 241);
             this.menu.Name = "menu";
             treeNode1.Name = "Nó5";
             treeNode1.Text = "Cadastro de Materiais";
@@ -230,7 +233,7 @@
             treeNode26,
             treeNode31,
             treeNode35});
-            this.menu.Size = new System.Drawing.Size(343, 488);
+            this.menu.Size = new System.Drawing.Size(257, 285);
             this.menu.TabIndex = 1;
             this.menu.DoubleClick += new System.EventHandler(this.menu_DoubleClick);
             // 
@@ -240,12 +243,13 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.painelMenu.CanvasColor = System.Drawing.SystemColors.Control;
             this.painelMenu.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.painelMenu.Controls.Add(this.imgLogo);
             this.painelMenu.Controls.Add(this.ribbonClientPanel1);
             this.painelMenu.Controls.Add(this.menu);
             this.painelMenu.DisabledBackColor = System.Drawing.Color.Empty;
             this.painelMenu.Location = new System.Drawing.Point(2, 12);
             this.painelMenu.Name = "painelMenu";
-            this.painelMenu.Size = new System.Drawing.Size(349, 544);
+            this.painelMenu.Size = new System.Drawing.Size(266, 544);
             this.painelMenu.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.painelMenu.Style.BackColor1.Color = System.Drawing.SystemColors.HighlightText;
             this.painelMenu.Style.BackColor2.Color = System.Drawing.Color.White;
@@ -257,6 +261,18 @@
             this.painelMenu.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.painelMenu.Style.GradientAngle = 90;
             this.painelMenu.TabIndex = 1;
+            // 
+            // imgLogo
+            // 
+            this.imgLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imgLogo.Location = new System.Drawing.Point(3, 34);
+            this.imgLogo.Name = "imgLogo";
+            this.imgLogo.Size = new System.Drawing.Size(258, 198);
+            this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgLogo.TabIndex = 3;
+            this.imgLogo.TabStop = false;
             // 
             // ribbonClientPanel1
             // 
@@ -307,9 +323,9 @@
             this.painelTab.Controls.Add(this.ribbonClientPanel2);
             this.painelTab.Controls.Add(tabControl);
             this.painelTab.DisabledBackColor = System.Drawing.Color.Empty;
-            this.painelTab.Location = new System.Drawing.Point(358, 12);
+            this.painelTab.Location = new System.Drawing.Point(269, 12);
             this.painelTab.Name = "painelTab";
-            this.painelTab.Size = new System.Drawing.Size(648, 544);
+            this.painelTab.Size = new System.Drawing.Size(737, 544);
             this.painelTab.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.painelTab.Style.BackColor1.Color = System.Drawing.Color.White;
             this.painelTab.Style.BackColor2.Color = System.Drawing.Color.White;
@@ -334,7 +350,7 @@
             this.ribbonClientPanel2.Controls.Add(this.labelX2);
             this.ribbonClientPanel2.Location = new System.Drawing.Point(-1, 0);
             this.ribbonClientPanel2.Name = "ribbonClientPanel2";
-            this.ribbonClientPanel2.Size = new System.Drawing.Size(649, 32);
+            this.ribbonClientPanel2.Size = new System.Drawing.Size(738, 32);
             // 
             // 
             // 
@@ -359,7 +375,7 @@
             this.btFecharTudo.ColorTable = DevComponents.DotNetBar.eButtonColor.Office2007WithBackground;
             this.btFecharTudo.FocusCuesEnabled = false;
             this.btFecharTudo.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.btFecharTudo.Location = new System.Drawing.Point(416, 6);
+            this.btFecharTudo.Location = new System.Drawing.Point(505, 6);
             this.btFecharTudo.Name = "btFecharTudo";
             this.btFecharTudo.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(3);
             this.btFecharTudo.Size = new System.Drawing.Size(111, 23);
@@ -375,7 +391,7 @@
             this.btFecharGuia.ColorTable = DevComponents.DotNetBar.eButtonColor.Office2007WithBackground;
             this.btFecharGuia.FocusCuesEnabled = false;
             this.btFecharGuia.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btFecharGuia.Location = new System.Drawing.Point(533, 6);
+            this.btFecharGuia.Location = new System.Drawing.Point(622, 6);
             this.btFecharGuia.Name = "btFecharGuia";
             this.btFecharGuia.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(3);
             this.btFecharGuia.Size = new System.Drawing.Size(111, 23);
@@ -391,7 +407,7 @@
             this.btEsconderMenu.ColorTable = DevComponents.DotNetBar.eButtonColor.Office2007WithBackground;
             this.btEsconderMenu.FocusCuesEnabled = false;
             this.btEsconderMenu.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.btEsconderMenu.Location = new System.Drawing.Point(182, 6);
+            this.btEsconderMenu.Location = new System.Drawing.Point(271, 6);
             this.btEsconderMenu.Name = "btEsconderMenu";
             this.btEsconderMenu.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(3);
             this.btEsconderMenu.Size = new System.Drawing.Size(111, 23);
@@ -408,7 +424,7 @@
             this.btMostrarMenu.Cursor = System.Windows.Forms.Cursors.Default;
             this.btMostrarMenu.FocusCuesEnabled = false;
             this.btMostrarMenu.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.btMostrarMenu.Location = new System.Drawing.Point(299, 6);
+            this.btMostrarMenu.Location = new System.Drawing.Point(388, 6);
             this.btMostrarMenu.Name = "btMostrarMenu";
             this.btMostrarMenu.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(3);
             this.btMostrarMenu.Size = new System.Drawing.Size(111, 23);
@@ -452,6 +468,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Home_FormClosed);
             tabControl.ResumeLayout(false);
             this.painelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.ribbonClientPanel1.ResumeLayout(false);
             this.painelTab.ResumeLayout(false);
             this.ribbonClientPanel2.ResumeLayout(false);
@@ -473,6 +490,7 @@
         private DevComponents.DotNetBar.ButtonX btEsconderMenu;
         private DevComponents.DotNetBar.ButtonX btFecharGuia;
         private DevComponents.DotNetBar.ButtonX btFecharTudo;
+        private System.Windows.Forms.PictureBox imgLogo;
         public static System.Windows.Forms.TabControl tabControl;
     }
 }

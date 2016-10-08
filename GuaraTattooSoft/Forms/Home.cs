@@ -25,6 +25,13 @@ namespace GuaraTattooSoft.Forms
             tabControl.AplicarPadroes();
 
             this.Text = "Tattoo Smart Soft - Versão 1.3 - Final";
+
+            try
+            {
+                Entidades.Config c = new Entidades.Config(true);
+                imgLogo.BackgroundImage = Image.FromFile(c.ImagemLogo);
+            }
+            catch { }
         }
 
         private void Home_FormClosed(object sender, FormClosedEventArgs e)
@@ -358,10 +365,10 @@ namespace GuaraTattooSoft.Forms
 
         private void btMostrarMenu_Click(object sender, EventArgs e)
         {
-            painelMenu.Width = 350;
+            painelMenu.Width = 250;
             int w = this.Width - 22;
             painelTab.Width = w - painelMenu.Width - 5;
-            painelTab.Location = new Point(painelMenu.Width + 10, painelMenu.Location.Y);
+            painelTab.Location = new Point(painelMenu.Width + 5, painelMenu.Location.Y);
             painelMenu.Visible = true;
         }
 
