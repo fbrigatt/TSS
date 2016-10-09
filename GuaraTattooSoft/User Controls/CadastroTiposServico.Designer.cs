@@ -99,6 +99,8 @@
             // ckAtivo
             // 
             this.ckAtivo.AutoSize = true;
+            this.ckAtivo.Checked = true;
+            this.ckAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckAtivo.Location = new System.Drawing.Point(392, 35);
             this.ckAtivo.Name = "ckAtivo";

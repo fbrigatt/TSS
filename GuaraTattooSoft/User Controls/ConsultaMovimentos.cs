@@ -11,6 +11,9 @@ using GuaraTattooSoft.Entidades;
 using GuaraTattooSoft.Extencoes;
 using System.Threading;
 using GuaraTattooSoft.Forms;
+using GuaraTattooSoft.Relatorios.DataSets;
+using Microsoft.Reporting.WinForms;
+using GuaraTattooSoft.Relatorios;
 
 namespace GuaraTattooSoft.User_Controls
 {
@@ -20,6 +23,7 @@ namespace GuaraTattooSoft.User_Controls
         Movimentos mov = null;
         Thread tarefa;
 
+        DataTable dtTmv = new DataTable();
         public ConsultaMovimentos()
         {
             InitializeComponent();
@@ -32,6 +36,10 @@ namespace GuaraTattooSoft.User_Controls
                 mov = new Movimentos();
                 mov.Pesquisar("id", "%", 1);
             }
+
+            dtTmv.Columns.Add("id", typeof(int));
+            dtTmv.Columns.Add("descricao", typeof(string));
+            dtTmv.Columns.Add("total", typeof(decimal));
 
             AtualizaDataGrid();
         }
@@ -55,6 +63,7 @@ namespace GuaraTattooSoft.User_Controls
             lbTotal.Text = "0,00";
             dataGridMovimentos.Rows.Clear();
             notif.Text = "Aguarde...";
+            dtTmv.Rows.Clear();
 
             for (int i = 0; i < mov.id_todos.Count; i++)
             {
@@ -65,7 +74,7 @@ namespace GuaraTattooSoft.User_Controls
                 Pagamentos_movimentos pg_mov = new Pagamentos_movimentos(mov.pagamentos_movimentos_id_todos[i]);
                 Formas_pagamento fp = new Formas_pagamento(pg_mov.Formas_pagamento_id);
                 string parcelado = fp.Permitir_parcel == true ? parcelado = "SIM" : parcelado = "NÃO";
-
+               
                 dataGridMovimentos.Rows.Add(mov.id_todos[i], mov.data_movimento_todos[i], tm.Descricao, caixa.Nome, usuarios.Nome, clientes.Nome, pg_mov.Valor, pg_mov.Desconto, fp.Descricao, parcelado);
 
                 decimal total = 0;
@@ -74,6 +83,8 @@ namespace GuaraTattooSoft.User_Controls
                     decimal valor = (decimal)row.Cells[6].Value;
                     total += valor;
                 }
+
+                dtTmv.Rows.Add(mov.tipos_movimento_id_todos[i], tm.Descricao, pg_mov.Valor);
 
                 lbTotal.Text = total.ToString("N2");
             }
@@ -156,6 +167,18 @@ namespace GuaraTattooSoft.User_Controls
             int id = dataGridMovimentos.IdAtual(0);
             DetalhesMovimento dm = new DetalhesMovimento(id);
             dm.ShowDialog();
+        }
+
+        private void lbComparar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            dtTmv.TableName = "tipos_movimento";
+            DataSet ds = new DsTmv_grafico();
+            ds.Tables["tipos_movimento"].Merge(dtTmv);
+
+            ReportDataSource rds_tmv = new ReportDataSource();
+            rds_tmv.Name = "tipos_movimento";
+            rds_tmv.Value = ds.Tables["tipos_movimento"];
+            new ExibeRelatorio("Relatorios/reports/TMV_Grafico.rdlc", new List<ReportDataSource>() { rds_tmv });
         }
     }
 }

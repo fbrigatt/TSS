@@ -343,7 +343,7 @@ namespace GuaraTattooSoft.Entidades
                     Referencia = dr.GetString(14);
                     Obs = dr.GetString(15);
                     DataCadastro = dr.GetDateTime(16);
-                    Campanha_id = dr.GetInt32(0);
+                    Campanha_id = dr.GetInt32(17);
                 }
 
                 dr.Close();

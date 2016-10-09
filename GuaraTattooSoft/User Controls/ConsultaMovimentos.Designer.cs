@@ -51,6 +51,7 @@
             this.txPesquisa = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label4 = new System.Windows.Forms.Label();
+            this.lbComparar = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMovimentos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -264,11 +265,25 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Pesquisa";
             // 
+            // lbComparar
+            // 
+            this.lbComparar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbComparar.AutoSize = true;
+            this.lbComparar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.lbComparar.Location = new System.Drawing.Point(654, 573);
+            this.lbComparar.Name = "lbComparar";
+            this.lbComparar.Size = new System.Drawing.Size(144, 16);
+            this.lbComparar.TabIndex = 11;
+            this.lbComparar.TabStop = true;
+            this.lbComparar.Text = "Comparar movimentos";
+            this.lbComparar.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbComparar_LinkClicked);
+            // 
             // ConsultaMovimentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Controls.Add(this.lbComparar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txPesquisa);
             this.Controls.Add(this.label3);
@@ -311,5 +326,6 @@
         private System.Windows.Forms.TextBox txPesquisa;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.LinkLabel lbComparar;
     }
 }

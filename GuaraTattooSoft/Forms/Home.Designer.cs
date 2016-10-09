@@ -124,10 +124,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             tabControl.Controls.Add(this.tabPage2);
-            tabControl.Location = new System.Drawing.Point(3, 38);
+            tabControl.Location = new System.Drawing.Point(5, 38);
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
-            tabControl.Size = new System.Drawing.Size(729, 499);
+            tabControl.Size = new System.Drawing.Size(726, 499);
             tabControl.TabIndex = 0;
             // 
             // tabPage2
@@ -135,7 +135,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(721, 473);
+            this.tabPage2.Size = new System.Drawing.Size(718, 473);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Página inicial";
             this.tabPage2.UseVisualStyleBackColor = true;

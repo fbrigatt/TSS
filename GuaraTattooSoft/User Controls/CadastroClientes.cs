@@ -35,7 +35,6 @@ namespace GuaraTattooSoft.User_Controls
             dataGridClientes.AplicarPadroes();
 
             AtualizaDataGrid();
-
             txNumero.BackgroundStyle.Border = eStyleBorderType.Solid;
             txNumero.BackgroundStyle.BorderColor = Color.Gray;
             cbCampanha.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -67,7 +66,6 @@ namespace GuaraTattooSoft.User_Controls
             {
                 listaAnamneses.Items.Add(anamneses.descricao_todos[i]);
             }
-
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -334,7 +332,7 @@ namespace GuaraTattooSoft.User_Controls
             txReferencia.Text = c.Referencia;
             txObs.Text = c.Obs;
             cbCampanha.SelectedValue = c.Campanha_id;
-            this.Update();
+            //this.Update();
 
             Clientes_anamneses ca = new Clientes_anamneses(id);
 

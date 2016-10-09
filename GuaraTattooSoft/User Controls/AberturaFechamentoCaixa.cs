@@ -91,11 +91,12 @@ namespace GuaraTattooSoft.User_Controls
             for (int i = 0; i < m.id_todos.Count; i++)
             {
                 Formas_pagamento fpg = new Formas_pagamento().GetByMovimento(m.id_todos[i]);
+                Profissionais profissional = m.GetProfissional(sc.Caixas_id, m.id_todos[i], dataAbertura, dataFechamento);
 
                 ds.Tables["movimentos"].Rows.Add(m.data_movimento_todos[i],
                                                     new Tipos_movimento(m.tipos_movimento_id_todos[i]).Descricao,
                                                     new Usuarios(m.usuarios_id_todos[i]).Nome,
-                                                    m.GetProfissional(sc.Caixas_id, dataAbertura, dataFechamento).Nome,
+                                                    profissional.Nome,
                                                     fpg.Descricao,
                                                     0,
                                                     m.Total(m.id_todos[i])

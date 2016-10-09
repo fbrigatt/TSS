@@ -401,6 +401,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DsFichaCompletaCliente.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Relatorios\DataSets\DsTmv_grafico.cs">
+      <DependentUpon>DsTmv_grafico.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\DataSets\DsTmv_grafico.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsTmv_grafico.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Relatorios\ExibeRelatorio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -723,6 +731,9 @@
     <EmbeddedResource Include="Relatorios\reports\RelatorioCaixa.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\reports\TMV_Grafico.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\VisualizaRelatorios.resx">
       <DependentUpon>VisualizaRelatorios.cs</DependentUpon>
     </EmbeddedResource>
@@ -880,6 +891,17 @@
     </None>
     <None Include="Relatorios\DataSets\DsFichaCompletaCliente.xss">
       <DependentUpon>DsFichaCompletaCliente.xsd</DependentUpon>
+    </None>
+    <None Include="Relatorios\DataSets\DsTmv_grafico.xsc">
+      <DependentUpon>DsTmv_grafico.xsd</DependentUpon>
+    </None>
+    <None Include="Relatorios\DataSets\DsTmv_grafico.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsTmv_grafico.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Relatorios\DataSets\DsTmv_grafico.xss">
+      <DependentUpon>DsTmv_grafico.xsd</DependentUpon>
     </None>
     <None Include="Resources\1459010232_Help.png" />
     <None Include="Resources\arrows.png" />

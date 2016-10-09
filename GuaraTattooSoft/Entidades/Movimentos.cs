@@ -430,13 +430,16 @@ namespace GuaraTattooSoft.Entidades
             }
         }
 
-        public Profissionais GetProfissional(int caixas_id, string dataAbertura, string dataFechamento)
+        public Profissionais GetProfissional(int caixas_id, int movimento_id, string dataAbertura, string dataFechamento)
         {
             string sql = @"select servicos.profissionais_id from movimentos
                             inner join movimentos_itens_movimento on movimentos.id = movimentos_itens_movimento.movimentos_id
                             inner join itens_movimento on movimentos_itens_movimento.itens_movimento_id = itens_movimento.id
                             inner join servicos on servicos.id = itens_movimento.cod_servico_material
-                            where itens_movimento.servico_material = 0 and movimentos.caixas_id = " + caixas_id + " and movimentos.data_movimento BETWEEN '" + dataAbertura + "' and '" + dataFechamento + "'";
+                            where itens_movimento.servico_material = 0 
+                            and movimentos.caixas_id = " + caixas_id + 
+                            " and movimentos.data_movimento BETWEEN '" + dataAbertura + "' and '" + dataFechamento + "'" +
+                            " and movimentos.id = " + movimento_id;
 
             try
             {
@@ -502,9 +505,7 @@ namespace GuaraTattooSoft.Entidades
 
         public decimal Total(int movimento_id)
         {
-            string sql = @"select sum(pagamentos_movimentos.valor - pagamentos_movimentos.desconto) from movimentos 
-                                inner join pagamentos_movimentos on movimentos.pagamentos_movimentos_id = movimentos.id
-                                where movimentos.id = " + movimento_id;
+            string sql = @"select valor from pagamentos_movimentos where id = " + movimento_id;
 
             try
             {
