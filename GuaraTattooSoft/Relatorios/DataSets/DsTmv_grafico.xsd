@@ -21,6 +21,14 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="valores" msprop:Generator_TableClassName="valoresDataTable" msprop:Generator_TableVarName="tablevalores" msprop:Generator_RowChangedName="valoresRowChanged" msprop:Generator_TablePropName="valores" msprop:Generator_RowDeletingName="valoresRowDeleting" msprop:Generator_RowChangingName="valoresRowChanging" msprop:Generator_RowEvHandlerName="valoresRowChangeEventHandler" msprop:Generator_RowDeletedName="valoresRowDeleted" msprop:Generator_RowClassName="valoresRow" msprop:Generator_UserTableName="valores" msprop:Generator_RowEvArgName="valoresRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descricao" msprop:Generator_ColumnVarNameInTable="columndescricao" msprop:Generator_ColumnPropNameInRow="descricao" msprop:Generator_ColumnPropNameInTable="descricaoColumn" msprop:Generator_UserColumnName="descricao" type="xs:string" minOccurs="0" />
+              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

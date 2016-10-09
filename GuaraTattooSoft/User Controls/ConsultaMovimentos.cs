@@ -175,10 +175,37 @@ namespace GuaraTattooSoft.User_Controls
             DataSet ds = new DsTmv_grafico();
             ds.Tables["tipos_movimento"].Merge(dtTmv);
 
+            DataView dv = dtTmv.DefaultView;
+            dv.Sort = "id desc";
+            DataTable sortedDT = dv.ToTable();
+
+            DataTable dtValores = new DataTable();
+            dtValores.Columns.Add("descricao");
+            dtValores.Columns.Add("total", typeof(decimal));
+
+            int tmvAtual = 0;
+            decimal total = 0;
+            foreach(DataRow row in sortedDT.Rows)
+            {
+                int idTmv =  int.Parse(row[0].ToString());
+                if(idTmv != tmvAtual)
+                {
+                    Tipos_movimento tipo_mov = new Tipos_movimento(idTmv);
+                    dtValores.Rows.Add(tipo_mov.Descricao, total);
+                    total = 0;
+                }
+                total += decimal.Parse(row[2].ToString());
+                tmvAtual = idTmv;
+            }
+
+            ReportDataSource rds_valores = new ReportDataSource();
+            rds_valores.Name = "valores";
+            rds_valores.Value = dtValores;
+
             ReportDataSource rds_tmv = new ReportDataSource();
             rds_tmv.Name = "tipos_movimento";
             rds_tmv.Value = ds.Tables["tipos_movimento"];
-            new ExibeRelatorio("Relatorios/reports/TMV_Grafico.rdlc", new List<ReportDataSource>() { rds_tmv });
+            new ExibeRelatorio("Relatorios/reports/TMV_Grafico.rdlc", new List<ReportDataSource>() { rds_tmv, rds_valores });
         }
     }
 }
