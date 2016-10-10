@@ -183,20 +183,23 @@ namespace GuaraTattooSoft.User_Controls
             dtValores.Columns.Add("descricao");
             dtValores.Columns.Add("total", typeof(decimal));
 
-            int tmvAtual = 0;
+            int tmvAtual = int.Parse(sortedDT.Rows[0][0].ToString());
             decimal total = 0;
             foreach(DataRow row in sortedDT.Rows)
             {
                 int idTmv =  int.Parse(row[0].ToString());
                 if(idTmv != tmvAtual)
                 {
-                    Tipos_movimento tipo_mov = new Tipos_movimento(idTmv);
+                    Tipos_movimento tipo_mov = new Tipos_movimento(tmvAtual);
                     dtValores.Rows.Add(tipo_mov.Descricao, total);
                     total = 0;
                 }
                 total += decimal.Parse(row[2].ToString());
                 tmvAtual = idTmv;
             }
+
+            Tipos_movimento tmv = new Tipos_movimento(tmvAtual);
+            dtValores.Rows.Add(tmv.Descricao, total);
 
             ReportDataSource rds_valores = new ReportDataSource();
             rds_valores.Name = "valores";

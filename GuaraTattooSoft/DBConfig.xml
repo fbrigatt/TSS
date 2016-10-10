@@ -2,7 +2,7 @@
 
 <config>
   <URL> localhost </URL>
-  <DATABASE> tattoo </DATABASE>
+  <DATABASE> tss </DATABASE>
   <UID> root </UID>
-  <Passwd> 81547686 </Passwd>
+  <Passwd> VRTec2902 </Passwd>
 </config>
