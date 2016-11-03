@@ -1,9 +1,0 @@
-versao:1.3
-
-• Corrigido bug nos filtros de data na tela "Totais em comissão por profissional"
-• Adicionados filtros nas telas "Contas a Pagar" e "Contas a Receber"
-• Adicionado relatório de "Fechamento de caixa"
-• Adicionado relatório de "Contagem de estoque"
-• Adicionado relatório de "Materiais com estoque baixo"
-• Adicionado relatório de "Ranking de profissionais"
-• Adicionado relatório de "Rotatividade de materiais"
