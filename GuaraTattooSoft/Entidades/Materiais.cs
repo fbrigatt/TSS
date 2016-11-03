@@ -29,6 +29,7 @@ namespace GuaraTattooSoft.Entidades
         public List<decimal> pedCompra_todos = new List<decimal>();
         public List<string> foto_todos = new List<string>();
 
+        int id;
         string descricao;
         string marca;
         string modelo;
@@ -43,6 +44,18 @@ namespace GuaraTattooSoft.Entidades
         decimal pedCompra;
         string foto;
         #region
+        public int Id
+        {
+            get
+            {
+                return this.id;
+            }
+            set
+            {
+                this.id = value;
+            }
+        }
+
         public string Descricao
         {
             get
@@ -244,7 +257,8 @@ namespace GuaraTattooSoft.Entidades
 
                 dr.Close();
 
-            }catch(MySqlException ex)
+            }
+            catch (MySqlException ex)
             {
                 Erro.Show(ex.Message, defaultError);
             }
@@ -276,12 +290,13 @@ namespace GuaraTattooSoft.Entidades
                     Venda = dr.GetBoolean(10);
                     Estoque = dr.GetDecimal(11);
                     PedCompra = dr.GetDecimal(12);
-                //    Foto = dr.GetString(13);
+                    //    Foto = dr.GetString(13);
                 }
 
                 dr.Close();
 
-            }catch(MySqlException ex)
+            }
+            catch (MySqlException ex)
             {
                 Erro.Show(ex.Message, defaultError);
             }
@@ -316,7 +331,7 @@ namespace GuaraTattooSoft.Entidades
                 //Sucesso.Show("Material atualizado!");
 
             }
-            catch(MySqlException ex)
+            catch (MySqlException ex)
             {
                 Erro.Show("Erro ao atualizar material \n" + ex.Message, defaultError);
             }
@@ -332,9 +347,10 @@ namespace GuaraTattooSoft.Entidades
             {
                 MySqlCommand cmd = new MySqlCommand("delete from materiais where id = " + id, conn.GetConexao());
                 cmd.ExecuteNonQuery();
-             //   Sucesso.Show("Material excluido!");
+                //   Sucesso.Show("Material excluido!");
 
-            }catch(MySqlException ex)
+            }
+            catch (MySqlException ex)
             {
                 Erro.Show("Não é possível deletar este material. O mesmo está relacionado a algum serviço e/ou movimento! \n" + ex.Message, defaultError);
             }
@@ -365,9 +381,10 @@ namespace GuaraTattooSoft.Entidades
                 cmd.Parameters.AddWithValue("@13", Foto);
 
                 cmd.ExecuteNonQuery();
-               // Sucesso.Show("Material gravado!");
+                // Sucesso.Show("Material gravado!");
 
-            } catch(MySqlException ex)
+            }
+            catch (MySqlException ex)
             {
                 Erro.Show("Erro ao gravar material \n" + ex.Message, defaultError);
             }
@@ -380,6 +397,53 @@ namespace GuaraTattooSoft.Entidades
         public int LastID()
         {
             throw new NotImplementedException();
+        }
+
+        public List<Materiais> MateriasParaComprar()
+        {
+            List<Materiais> lista = new List<Materiais>();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("select * from materiais where estoque < pedCompra", conn.GetConexao());
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        Materiais material = new Materiais(false);
+
+                        material.Id = dr.GetInt32(0);
+                        material.Descricao = dr.IsDBNull(1) ? string.Empty : dr.GetString(1);
+                        material.Marca = dr.IsDBNull(2) ? string.Empty : dr.GetString(2);
+                        material.Modelo = dr.IsDBNull(3) ? string.Empty : dr.GetString(3);
+                        material.Tipo = dr.IsDBNull(4) ? string.Empty : dr.GetString(4);
+                        material.Tamanho = dr.IsDBNull(5) ? string.Empty : dr.GetString(5);
+                        material.Preco_custo = dr.IsDBNull(6) ? 0 : dr.GetDecimal(6);
+                        material.Margem_lucro = dr.IsDBNull(7) ? 0 : dr.GetDouble(7);
+                        material.Preco_venda = dr.IsDBNull(8) ? 0 : dr.GetDecimal(8);
+                        material.Insumo = dr.IsDBNull(9) ? false : dr.GetBoolean(9);
+                        material.Venda = dr.IsDBNull(10) ? false : dr.GetBoolean(10);
+                        material.Estoque = dr.IsDBNull(11) ? 0 : dr.GetDecimal(11);
+                        material.PedCompra = dr.IsDBNull(12) ? 0 : dr.GetDecimal(12);
+                        material.Foto = dr.IsDBNull(13) ? string.Empty : dr.GetString(13);
+
+                        lista.Add(material);
+                    }
+                }
+
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                Erro.Show("Erro ao listar materias\n " + ex.Message, defaultError);
+            }
+            finally
+            {
+                conn.Fechar();
+            }
+
+            return lista;
         }
         #endregion
     }
