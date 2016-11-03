@@ -16,6 +16,7 @@ namespace GuaraTattooSoft.Entidades
 
         public List<int> id_todos = new List<int>();
         public List<DateTime> data_servico_todos = new List<DateTime>();
+        public List<int> estilo_id_todos = new List<int>();
         public List<string> servico_realizado_todos = new List<string>();
         public List<decimal> valor_servico_todos = new List<decimal>();
         public List<decimal> valor_total_todos = new List<decimal>();
@@ -25,6 +26,7 @@ namespace GuaraTattooSoft.Entidades
         public List<int> usuarios_id_todos = new List<int>();
 
         private DateTime data_servico;
+        private int estilo_id;
         private string servico_realizado;
         private decimal valor_servico;
         private decimal valor_total;
@@ -34,6 +36,17 @@ namespace GuaraTattooSoft.Entidades
         private int usuarios_id;
 
         #region Propriedades
+        public int Estilo_id
+        {
+            get
+            {
+                return this.estilo_id;
+            }
+            set
+            {
+                this.estilo_id = value;
+            }
+        }
         public string Servico_realizado
         {
             get
@@ -153,13 +166,14 @@ namespace GuaraTattooSoft.Entidades
                     {
                         id_todos.Add(dr.GetInt32(0));
                         data_servico_todos.Add(dr.GetDateTime(1));
-                        servico_realizado_todos.Add(dr.GetString(2));
-                        valor_servico_todos.Add(dr.GetDecimal(3));
-                        valor_total_todos.Add(dr.GetDecimal(4));
-                        tipos_servico_id_todos.Add(dr.GetInt32(5));
-                        clientes_id_todos.Add(dr.GetInt32(6));
-                        profissionais_id_todos.Add(dr.GetInt32(7));
-                        usuarios_id_todos.Add(dr.GetInt32(8));
+                        estilo_id_todos.Add(dr.GetInt32(2));
+                        servico_realizado_todos.Add(dr.GetString(3));
+                        valor_servico_todos.Add(dr.GetDecimal(4));
+                        valor_total_todos.Add(dr.GetDecimal(5));
+                        tipos_servico_id_todos.Add(dr.GetInt32(6));
+                        clientes_id_todos.Add(dr.GetInt32(7));
+                        profissionais_id_todos.Add(dr.GetInt32(8));
+                        usuarios_id_todos.Add(dr.GetInt32(9));
                     }
                 }
 
@@ -187,13 +201,14 @@ namespace GuaraTattooSoft.Entidades
                 if (dr.HasRows)
                 {
                     Data_servico = dr.GetDateTime(1);
-                    Servico_realizado = dr.GetString(2);
-                    Valor_servico = dr.GetDecimal(3);
-                    Valor_total = dr.GetDecimal(4);
-                    Tipos_servico_id = dr.GetInt32(5);
-                    Clientes_id = dr.GetInt32(6);
-                    Profissionais_id = dr.GetInt32(7);
-                    Usuarios_id = dr.GetInt32(8);
+                    Estilo_id = dr.GetInt32(2);
+                    Servico_realizado = dr.GetString(3);
+                    Valor_servico = dr.GetDecimal(4);
+                    Valor_total = dr.GetDecimal(5);
+                    Tipos_servico_id = dr.GetInt32(6);
+                    Clientes_id = dr.GetInt32(7);
+                    Profissionais_id = dr.GetInt32(8);
+                    Usuarios_id = dr.GetInt32(9);
                 }
 
                 dr.Close();
@@ -231,16 +246,17 @@ namespace GuaraTattooSoft.Entidades
         {
             try
             {
-                MySqlCommand cmd = new MySqlCommand("insert into servicos(data_servico, servico_realizado, valor_servico, valor_total, tipos_servico_id, clientes_id, profissionais_id, usuarios_id) values(@1, @2, @3, @4, @5, @6, @7, @8)", conn.GetConexao());
+                MySqlCommand cmd = new MySqlCommand("insert into servicos(data_servico, estilo_id, servico_realizado, valor_servico, valor_total, tipos_servico_id, clientes_id, profissionais_id, usuarios_id) values(@1, @2, @3, @4, @5, @6, @7, @8)", conn.GetConexao());
 
                 cmd.Parameters.AddWithValue("@1", Data_servico);
-                cmd.Parameters.AddWithValue("@2", Servico_realizado);
-                cmd.Parameters.AddWithValue("@3", Valor_servico);
-                cmd.Parameters.AddWithValue("@4", Valor_total);
-                cmd.Parameters.AddWithValue("@5", Tipos_servico_id);
-                cmd.Parameters.AddWithValue("@6", Clientes_id);
-                cmd.Parameters.AddWithValue("@7", Profissionais_id);
-                cmd.Parameters.AddWithValue("@8", Usuarios_id);
+                cmd.Parameters.AddWithValue("@2", Estilo_id);
+                cmd.Parameters.AddWithValue("@3", Servico_realizado);
+                cmd.Parameters.AddWithValue("@4", Valor_servico);
+                cmd.Parameters.AddWithValue("@5", Valor_total);
+                cmd.Parameters.AddWithValue("@6", Tipos_servico_id);
+                cmd.Parameters.AddWithValue("@7", Clientes_id);
+                cmd.Parameters.AddWithValue("@8", Profissionais_id);
+                cmd.Parameters.AddWithValue("@9", Usuarios_id);
 
                 cmd.ExecuteNonQuery();
 
@@ -306,13 +322,14 @@ namespace GuaraTattooSoft.Entidades
                     {
                         id_todos.Add(dr.GetInt32(0));
                         data_servico_todos.Add(dr.GetDateTime(1));
-                        servico_realizado_todos.Add(dr.GetString(2));
-                        valor_servico_todos.Add(dr.GetDecimal(3));
-                        valor_total_todos.Add(dr.GetDecimal(4));
-                        tipos_servico_id_todos.Add(dr.GetInt32(5));
-                        clientes_id_todos.Add(dr.GetInt32(6));
-                        profissionais_id_todos.Add(dr.GetInt32(7));
-                        usuarios_id_todos.Add(dr.GetInt32(8));
+                        estilo_id_todos.Add(dr.GetInt32(2));
+                        servico_realizado_todos.Add(dr.GetString(3));
+                        valor_servico_todos.Add(dr.GetDecimal(4));
+                        valor_total_todos.Add(dr.GetDecimal(5));
+                        tipos_servico_id_todos.Add(dr.GetInt32(6));
+                        clientes_id_todos.Add(dr.GetInt32(7));
+                        profissionais_id_todos.Add(dr.GetInt32(8));
+                        usuarios_id_todos.Add(dr.GetInt32(9));
                     }
                 }
 
@@ -356,13 +373,14 @@ namespace GuaraTattooSoft.Entidades
                     {
                         id_todos.Add(dr.GetInt32(0));
                         data_servico_todos.Add(dr.GetDateTime(1));
-                        servico_realizado_todos.Add(dr.GetString(2));
-                        valor_servico_todos.Add(dr.GetDecimal(3));
-                        valor_total_todos.Add(dr.GetDecimal(4));
-                        tipos_servico_id_todos.Add(dr.GetInt32(5));
-                        clientes_id_todos.Add(dr.GetInt32(6));
-                        profissionais_id_todos.Add(dr.GetInt32(7));
-                        usuarios_id_todos.Add(dr.GetInt32(8));
+                        estilo_id_todos.Add(dr.GetInt32(2));
+                        servico_realizado_todos.Add(dr.GetString(3));
+                        valor_servico_todos.Add(dr.GetDecimal(4));
+                        valor_total_todos.Add(dr.GetDecimal(5));
+                        tipos_servico_id_todos.Add(dr.GetInt32(6));
+                        clientes_id_todos.Add(dr.GetInt32(7));
+                        profissionais_id_todos.Add(dr.GetInt32(8));
+                        usuarios_id_todos.Add(dr.GetInt32(9));
                     }
                 }
 
@@ -392,13 +410,14 @@ namespace GuaraTattooSoft.Entidades
                     {
                         id_todos.Add(dr.GetInt32(0));
                         data_servico_todos.Add(dr.GetDateTime(1));
-                        servico_realizado_todos.Add(dr.GetString(2));
-                        valor_servico_todos.Add(dr.GetDecimal(3));
-                        valor_total_todos.Add(dr.GetDecimal(4));
-                        tipos_servico_id_todos.Add(dr.GetInt32(5));
-                        clientes_id_todos.Add(dr.GetInt32(6));
-                        profissionais_id_todos.Add(dr.GetInt32(7));
-                        usuarios_id_todos.Add(dr.GetInt32(8));
+                        estilo_id_todos.Add(dr.GetInt32(2));
+                        servico_realizado_todos.Add(dr.GetString(3));
+                        valor_servico_todos.Add(dr.GetDecimal(4));
+                        valor_total_todos.Add(dr.GetDecimal(5));
+                        tipos_servico_id_todos.Add(dr.GetInt32(6));
+                        clientes_id_todos.Add(dr.GetInt32(7));
+                        profissionais_id_todos.Add(dr.GetInt32(8));
+                        usuarios_id_todos.Add(dr.GetInt32(9));
                     }
                 }
 

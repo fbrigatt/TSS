@@ -108,6 +108,7 @@ namespace GuaraTattooSoft.Entidades
             catch (MySqlException ex)
             {
                 Erro.Show(ex.Message, defaultError);
+                Log.Write(GetType().FullName, "Agenda(bool loadData = false", ex.Message);
             }
             finally
             {
@@ -138,6 +139,7 @@ namespace GuaraTattooSoft.Entidades
             catch (MySqlException ex)
             {
                 Erro.Show(ex.Message, defaultError);
+                Log.Write(GetType().FullName, "Agenda(id)", ex.Message);
             }
             finally
             {
@@ -166,6 +168,7 @@ namespace GuaraTattooSoft.Entidades
             catch (MySqlException ex)
             {
                 Erro.Show("Erro ao atualizar agenda \n" + ex.Message, defaultError);
+                Log.Write(GetType().FullName, "Atualizar(int id)", ex.Message);
             }
             finally
             {
@@ -187,6 +190,7 @@ namespace GuaraTattooSoft.Entidades
             catch (MySqlException ex)
             {
                 Erro.Show("Erro ao deletar agendamento \n" + ex.Message, defaultError);
+                Log.Write(GetType().FullName, "Deletar(int id)", ex.Message);
             }
             finally
             {
@@ -216,6 +220,7 @@ namespace GuaraTattooSoft.Entidades
             catch (MySqlException ex)
             {
                 Erro.Show("Erro ao criar agendamento \n" + ex.Message, defaultError);
+                Log.Write(GetType().FullName, "Gravar", ex.Message);
             }
             finally
             {
@@ -242,6 +247,7 @@ namespace GuaraTattooSoft.Entidades
             catch (MySqlException ex)
             {
                 Erro.Show(ex.Message, defaultError);
+                Log.Write(GetType().FullName, "NumeroCompromissosProfissional(int profissionais_id)", ex.Message);
             }
             finally
             {
@@ -278,6 +284,7 @@ namespace GuaraTattooSoft.Entidades
             catch (MySqlException ex)
             {
                 Erro.Show(ex.Message, defaultError);
+                Log.Write(GetType().FullName, "CompromissosProfissional(int profissionais_id)", ex.Message);
             }
             finally
             {
@@ -303,6 +310,7 @@ namespace GuaraTattooSoft.Entidades
             }catch(MySqlException ex)
             {
                 Erro.Show("Erro ao verificar agenda do cliente \n" + ex.Message, defaultError);
+                Log.Write(GetType().FullName, "ClienteJaAgendado(int clientes_id)", ex.Message);
             }
             finally
             {
@@ -330,6 +338,7 @@ namespace GuaraTattooSoft.Entidades
             }catch(MySqlException ex)
             {
                 Erro.Show(ex.Message, "Agenda - Erro ao recuperar id apartir do cliente");
+                Log.Write(GetType().FullName, "IdByCliente(int clientes_id)", ex.Message);
             }
             finally
             {
@@ -346,20 +355,15 @@ namespace GuaraTattooSoft.Entidades
 
         public List<KeyValueTriple<int, string, int>> GetListaProfissionais()
         {
-
             List<KeyValueTriple<int, string, int>> listaProfissionais = new List<KeyValueTriple<int, string, int>>();
-
             Profissionais profissionais = new Profissionais(true);
-
             Agenda agenda = new Agenda();
 
             for (int i = 0; i < profissionais.id_todos.Count; i++)
             {
                 int numCompromissos = agenda.NumeroCompromissosProfissional(profissionais.id_todos[i]);
-
                 listaProfissionais.Add(new KeyValueTriple<int, string, int>(profissionais.id_todos[i], profissionais.nome_todos[i], numCompromissos));
             }
-
             return listaProfissionais;
         }
         
