@@ -246,7 +246,7 @@ namespace GuaraTattooSoft.Entidades
         {
             try
             {
-                MySqlCommand cmd = new MySqlCommand("insert into servicos(data_servico, estilo_id, servico_realizado, valor_servico, valor_total, tipos_servico_id, clientes_id, profissionais_id, usuarios_id) values(@1, @2, @3, @4, @5, @6, @7, @8)", conn.GetConexao());
+                MySqlCommand cmd = new MySqlCommand("insert into servicos(data_servico, estilo_id, servico_realizado, valor_servico, valor_total, tipos_servico_id, clientes_id, profissionais_id, usuarios_id) values(@1, @2, @3, @4, @5, @6, @7, @8, @9)", conn.GetConexao());
 
                 cmd.Parameters.AddWithValue("@1", Data_servico);
                 cmd.Parameters.AddWithValue("@2", Estilo_id);
